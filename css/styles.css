@@ -1,0 +1,185 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+html {
+  scroll-behavior: smooth;
+}
+
+.h-screen-l {
+    height: 100lvh;
+}
+.w-full {
+    width: 100%;
+}
+/* Add in your custom CSS */
+.custom-btn {
+  background-color: transparent;
+  border: 2px solid #C7A754;
+  color: #C7A754;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #C7A754;
+  color: white;
+}
+
+
+
+text {
+  fill:  #C7A754;
+  font-size: 1.5rem;
+}
+
+
+
+
+.rows {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.large-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.large-image:hover {
+  transform: scale(1.05);
+}
+
+.small-image {
+  width: calc(50% - 5px);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.small-image:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+#lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  transform: scale(1.05);
+}
+.hidden {
+  display: none;
+}
+
+/* Fade-in effect */
+.scroll-hint {
+  transition: all 0.8s ease-in-out;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.arrow-icon {
+  animation: bounce 1.2s infinite;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateY(-30px); /* Slide from top */
+  transition: all 0.6s ease-out;
+}
+
+.slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animation_btn {
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+  animation: pulse 2.5s infinite ease-in-out;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.97);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.97);
+  }
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
