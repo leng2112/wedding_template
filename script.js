@@ -102,22 +102,35 @@ document.addEventListener("DOMContentLoaded", function () {
   slideElements.forEach(el => observer.observe(el));
 });
 
+ const audio = document.getElementById('backgroundAudio');
 
-  const audio = document.getElementById('backgroundAudio');
-
-  // Attempt to play the audio automatically
+  // Autoplay attempt
   audio.play()
     .then(() => console.log("Audio is playing"))
     .catch((error) => console.warn("Autoplay was prevented. Error:", error));
 
-  // Unmute the audio after user interaction
+  // Unmute and play on user interaction
   document.addEventListener('click', () => {
-    console.log("User clicked. Unmuting audio...");
     audio.muted = false;
     audio.play()
       .then(() => console.log("Audio unmuted and playing"))
-      .catch((error) => console.error("Error unmuting audio:", error));
+      .catch((err) => console.error("Error unmuting audio:", err));
   });
+
+  // Stop audio when user leaves the tab or browser
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      console.log("User left the page. Stopping audio...");
+      audio.pause();
+    } else {
+      console.log("User returned to the page.");
+      // Optionally resume if needed, but may require user interaction again
+      // audio.play().catch(err => console.error("Failed to resume audio:", err));
+    }
+  });
+  if (document.visibilityState === 'visible') {
+  audio.play().catch(err => console.warn("Auto-resume failed:", err));
+}
   
   document.addEventListener('DOMContentLoaded', () => {
     // Get the query string from the URL
