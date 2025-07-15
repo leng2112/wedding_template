@@ -102,35 +102,44 @@ document.addEventListener("DOMContentLoaded", function () {
   slideElements.forEach(el => observer.observe(el));
 });
 
- const audio = document.getElementById('backgroundAudio');
+    const audio = document.getElementById('backgroundAudio');
 
-  // Autoplay attempt
-  audio.play()
-    .then(() => console.log("Audio is playing"))
-    .catch((error) => console.warn("Autoplay was prevented. Error:", error));
-
-  // Unmute and play on user interaction
-  document.addEventListener('click', () => {
-    audio.muted = false;
+    // Try autoplay on page load (will likely fail due to browser policy)
     audio.play()
-      .then(() => console.log("Audio unmuted and playing"))
-      .catch((err) => console.error("Error unmuting audio:", err));
-  });
+      .then(() => console.log("Audio is playing"))
+      .catch((error) => console.warn("Autoplay was prevented. Error:", error));
 
-  // Stop audio when user leaves the tab or browser
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-      console.log("User left the page. Stopping audio...");
+    // Unmute and play on first user interaction
+    document.addEventListener('click', () => {
+      audio.muted = false;
+      audio.play()
+        .then(() => console.log("Audio unmuted and playing"))
+        .catch((err) => console.error("Error unmuting audio:", err));
+    }, { once: true }); // only run once
+
+    // Pause when user switches tab or minimizes
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        console.log("Document hidden - pausing audio");
+        audio.pause();
+      } else {
+        console.log("Document visible - optionally resume audio");
+        // You can resume if you want:
+        // audio.play().catch(err => console.warn("Resume failed:", err));
+      }
+    });
+
+    // Also pause on blur (extra safety for Safari)
+    window.addEventListener('blur', () => {
+      console.log("Window lost focus - pausing audio");
       audio.pause();
-    } else {
-      console.log("User returned to the page.");
-      // Optionally resume if needed, but may require user interaction again
-      // audio.play().catch(err => console.error("Failed to resume audio:", err));
-    }
-  });
-  if (document.visibilityState === 'visible') {
-  audio.play().catch(err => console.warn("Auto-resume failed:", err));
-}
+    });
+
+    // Pause on pagehide (when tab is closed or navigated away)
+    window.addEventListener('pagehide', () => {
+      console.log("Page is hiding - pausing audio");
+      audio.pause();
+    });
   
   document.addEventListener('DOMContentLoaded', () => {
     // Get the query string from the URL
