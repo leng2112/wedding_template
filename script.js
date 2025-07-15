@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(() => console.log("Audio unmuted and playing"))
       .catch((error) => console.error("Error unmuting audio:", error));
   });
+  
   document.addEventListener('DOMContentLoaded', () => {
     // Get the query string from the URL
     const queryString = window.location.search;
