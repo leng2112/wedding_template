@@ -118,5 +118,24 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(() => console.log("Audio unmuted and playing"))
       .catch((error) => console.error("Error unmuting audio:", error));
   });
+  document.addEventListener('DOMContentLoaded', () => {
+    // Get the query string from the URL
+    const queryString = window.location.search;
 
+    // Parse the query string into an object
+    const urlParams = new URLSearchParams(queryString);
+
+    // Extract the 'name' parameter
+    const guestName = urlParams.get('name');
+
+    // Find the placeholder element in the HTML
+    const namePlaceholder = document.getElementById('guestName');
+
+    // Replace the placeholder with the guest's name
+    if (guestName && guestName.trim() !== "") {
+      namePlaceholder.textContent = decodeURIComponent(guestName); // Decode URL-encoded characters
+    } else {
+      namePlaceholder.textContent = "Guest"; // Default if no name is provided
+    }
+  });
   
