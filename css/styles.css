@@ -189,6 +189,7 @@ text {
 
 .arrow-icon {
   animation: bounce 1.2s infinite;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .slide-in {

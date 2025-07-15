@@ -140,3 +140,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let lastScrollTop = 0;
+    const arrow = document.querySelector(".arrow-icon");
+
+    window.addEventListener("scroll", function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        arrow.style.opacity = "0";
+      } else {
+        // Scrolling up
+        arrow.style.opacity = "1";
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  });
