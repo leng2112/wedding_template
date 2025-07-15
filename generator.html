@@ -2,9 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Invitation Links</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 
 <body class="bg-light text-center text-dark">
@@ -12,12 +13,17 @@
     <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 px-3">
         <h1 class="mb-4 fw-bold">Generate Personalized Invitation Links</h1>
 
-        <!-- Input -->
+        <!-- Single Guest Input -->
         <input type="text" class="form-control mb-3" id="singleGuestName" placeholder="Enter Guest Name" />
-
-        <!-- Button -->
         <button class="btn btn-primary w-100 mb-4" style="max-width: 400px;" onclick="generateLink()">
             Generate Single Link
+        </button>
+
+        <!-- Multiple Guests Textarea -->
+        <textarea class="form-control mb-3" id="multipleGuestNames" rows="5"
+            placeholder="Enter guest names, one per line"></textarea>
+        <button class="btn btn-success w-100 mb-4" style="max-width: 400px;" onclick="generateLinks()">
+            Generate Multiple Links
         </button>
 
         <!-- Link Output -->
@@ -26,7 +32,37 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function generateLink() {
+            const guestName = document.getElementById('singleGuestName').value.trim();
+            if (guestName === "") {
+                alert("Please enter a guest name.");
+                return;
+            }
+            const encodedName = encodeURIComponent(guestName);
+            const baseUrl = "https://leng2112.github.io/wedding_template/?name=";
+            const invitationLink = baseUrl + encodedName;
+            const linkContainer = document.getElementById('linkContainer');
+            linkContainer.innerHTML = `<p><strong>${guestName}:</strong> <a href="${invitationLink}" target="_blank">${invitationLink}</a></p>`;
+        }
+
+        function generateLinks() {
+            const guestNames = document.getElementById('multipleGuestNames').value.split('\n').map(name => name.trim());
+            const validNames = guestNames.filter(name => name !== "");
+            if (validNames.length === 0) {
+                alert("Please enter at least one guest name.");
+                return;
+            }
+            const baseUrl = "https://leng2112.github.io/wedding_template/?name=";
+            const linksHtml = validNames.map(name => {
+                const encodedName = encodeURIComponent(name);
+                const invitationLink = baseUrl + encodedName;
+                return `<p><a href="${invitationLink}" target="_blank">${invitationLink}</a></p>`;
+            }).join("");
+            const linkContainer = document.getElementById('linkContainer');
+            linkContainer.innerHTML = linksHtml;
+        }
+    </script>
 </body>
 
 </html>
