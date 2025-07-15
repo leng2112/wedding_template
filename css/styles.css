@@ -186,7 +186,12 @@ text {
     transform: translateY(6px);
   }
 }
-
+.z-3 {
+  z-index: 50;
+}
+.min-h-screen-s, .min-h-svh {
+    min-height: 100svh;
+}
 .arrow-icon {
   animation: bounce 1.2s infinite;
   transition: opacity 0.3s ease-in-out;
