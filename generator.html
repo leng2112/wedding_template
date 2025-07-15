@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="bg-light text-center text-dark">
+
+    <div class="container d-flex flex-column align-items-center justify-content-center min-vh-100 px-3">
+        <h1 class="mb-4 fw-bold">Generate Personalized Invitation Links</h1>
+
+        <!-- Input -->
+        <input type="text" class="form-control mb-3" id="singleGuestName" placeholder="Enter Guest Name" />
+
+        <!-- Button -->
+        <button class="btn btn-primary w-100 mb-4" style="max-width: 400px;" onclick="generateLink()">
+            Generate Single Link
+        </button>
+
+        <!-- Link Output -->
+        <div class="w-100" style="max-width: 400px;">
+            <div id="linkContainer" class="text-start fs-5 text-break"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
