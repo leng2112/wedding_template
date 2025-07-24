@@ -181,3 +181,41 @@ document.addEventListener("DOMContentLoaded", function () {
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slideElements = document.querySelectorAll(".slide-in, .slide-in-left, .slide-in-right");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Optional: stagger animation
+        setTimeout(() => {
+          entry.target.classList.add("slide-in-visible");
+        }, index * 150);
+
+        observer.unobserve(entry.target); // only animate once
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  slideElements.forEach(el => observer.observe(el));
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".pop-up-on-scroll");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("pop-up-visible");
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  elements.forEach(el => observer.observe(el));
+});
+

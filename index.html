@@ -56,23 +56,22 @@
     </audio>
     <!-- Background Image -->
     <img src="images/background.png" alt="background"
-        class="position-fixed top-0 start-0 w-100 vh-100 object-fit-cover  d-lg-block" style="z-index: -100;">
+        class="position-fixed top-0 start-0 w-100 h-100 object-fit-cover  d-lg-block"
+        style="z-index: -100; background-size: cover;">
     <!-- First Page -->
     <header id="first-page">
         <div class="d-flex flex-column justify-content-center align-items-center w-100 position-relative"
             style="height: 100vh; z-index: 10;">
             <!-- Logo -->
             <div class="z-3">
-                <img alt="logo" loading="lazy" width="204" height="278" decoding="async"
-                    srcset="https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo.png?tr=w-256 1x, https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo.png?tr=w-640 2x"
-                    src="https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo.png?tr=w-640" class="img-fluid"
-                    style="color: transparent;">
+                <img alt="logo" loading="lazy" width="204" height="278" decoding="async" src="images/logo.svg"
+                    class="img-fluid">
             </div>
             <!-- Title -->
             <div class="text-center mt-5">
                 <h1 class="fw-semibold fs-4" style="color: #C7A754;">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
                 <p class="fw-semibold fs-4" style="color: #C7A754;">សូមគោរពអញ្ចើញ</p>
-                <h2 id="guestName">Guest</h2>
+                <h2 id="guestName" style="color: #C7A754;">Guest</h2>
 
             </div>
             <!-- Open Button -->
@@ -106,14 +105,12 @@
                         style="opacity: 1;">
 
                         <!-- Title -->
-                        <p class="fw-semibold fs-4 mb-0" style="color: #C7A754;">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
+                        <p class="fw-semibold fs-4 mb-0" style=" color: #C7A754;">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
 
                         <!-- Logo -->
-                        <div class="z-3">
+                        <div class="z-3 mt-3">
                             <img alt="logo" loading="lazy" width="204" height="278" decoding="async"
-                                srcset="https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo.png?tr=w-256 1x, https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo.png?tr=w-640 2x"
-                                src="https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo.png?tr=w-640"
-                                class="img-fluid" style="color: transparent;">
+                                src="images/logo.svg" class="img-fluid">
                         </div>
 
                         <!-- Groom & Bride Names -->
@@ -123,16 +120,16 @@
                                 <p class="text-xs mb-1 fw-medium" style="color: #C7A754;">កូនប្រុសនាម</p>
                                 <div class="d-flex flex-column-reverse">
                                     <p class="mb-0 text-nowrap" style="color: #C7A754;">
-                                        ពិសាល&ZeroWidthSpace; នីកូឡា
+                                        សាក់&ZeroWidthSpace; ប្រុសលាប
                                     </p>
-                                    <p class="mb-0" style="color: #C7A754;">កៅ</p>
                                 </div>
                             </div>
                             <div class="d-flex flex-column align-items-center text-center">
                                 <p class="text-xs mb-1 fw-medium" style="color: #C7A754;">កូនស្រីនាម</p>
                                 <div class="d-flex flex-column-reverse">
-                                    <p class="mb-0 text-nowrap" style="color: #C7A754;">រ័ត្នវីរីយ៉ា</p>
-                                    <p class="mb-0" style="color: #C7A754;">វុឌ្ឍី</p>
+                                    <p class="mb-0 text-nowrap" style="color: #C7A754;">ប៊ុនថុន &ZeroWidthSpace; កញ្ញា
+                                    </p>
+                                    <p class="mb-0" style="color: #C7A754;"></p>
                                 </div>
                             </div>
                         </div>
@@ -160,57 +157,60 @@
                         </div>
                     </div>
             </section>
-            <section id="gallery1st" class="position-relative">
-                <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100"
-                    style="max-width: 640px; color: #C7A754; margin-top: 100px;">
-                    <!-- First Row: Single Large Image -->
-                    <div class="rows">
-                        <img src="images/images1.png" alt="Gallery Image 1" class="large-image"
-                            onclick="openLightbox(0)" loading="lazy" />
-                    </div>
-                    <!-- Second Row: Two Smaller Images -->
-                    <div class="rows">
-                        <img src="images/images2.png" alt="Gallery Image 2" class="small-image"
-                            onclick="openLightbox(1)" loading="lazy" />
-                        <img src="images/images3.png" alt="Gallery Image 3" class="small-image"
-                            onclick="openLightbox(2)" loading="lazy" />
-                    </div>
-                    <!-- Third Row: Single Large Image -->
-                    <div class="rows">
-                        <img src="images/images4.png" alt="Gallery Image 4" class="large-image"
-                            onclick="openLightbox(3)" loading="lazy" />
-                    </div>
-                    <!-- Lightbox Modal -->
-                    <div id="lightbox" class="lightbox hidden">
-                        <span class="close-btn" onclick="closeLightbox()">&times;</span>
-                        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-                        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-                        <img src="" alt="Enlarged Image" id="lightbox-image" />
+            <section id="gallery1st" class="position-relative slide-in">
+                <div class="d-flex flex-column w-100 h-100">
+
+                    <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100"
+                        style="max-width: 640px; color: #C7A754; margin-top: 100px;">
+                        <!-- First Row: Single Large Image -->
+                        <div class="rows">
+                            <img src="images/images1.png" alt="Gallery Image 1" class="large-image"
+                                onclick="openLightbox(0)" loading="lazy" />
+                        </div>
+                        <!-- Second Row: Two Smaller Images -->
+                        <div class="rows">
+                            <img src="images/images2.png" alt="Gallery Image 2" class="small-image"
+                                onclick="openLightbox(1)" loading="lazy" />
+                            <img src="images/images3.png" alt="Gallery Image 3" class="small-image"
+                                onclick="openLightbox(2)" loading="lazy" />
+                        </div>
+                        <!-- Third Row: Single Large Image -->
+                        <div class="rows">
+                            <img src="images/images4.png" alt="Gallery Image 4" class="large-image"
+                                onclick="openLightbox(3)" loading="lazy" />
+                        </div>
+                        <!-- Lightbox Modal -->
+                        <div id="lightbox" class="lightbox hidden">
+                            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+                            <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+                            <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+                            <img src="" alt="Enlarged Image" id="lightbox-image" />
+                        </div>
                     </div>
                 </div>
             </section>
             <section id="detail" class="position-relative">
-                <div class="d-flex flex-column w-100 h-100">
+                <div class="d-flex flex-column w-100 h-100 ">
                     <div class="mt-5 mb-5 px-4" style="color: #C7A754;">
                         <!-- Parents -->
-                        <div class="d-flex justify-content-between fw-semibold mx-auto mt-4 mb-4"
+                        <div class="d-flex justify-content-between fw-semibold mx-auto mt-4 mb-4 pop-up-on-scroll"
                             style="max-width: 640px; gap: 0.5rem;">
-                            <div class="flex-fill text-start small">
+                            <div class=" text-start small">
                                 លោក កៅ វណ្ណារិន<br>
                                 លោកស្រី ស៊ុន ពិសី
                             </div>
-                            <div class="flex-fill text-end small">
+                            <div class=" text-end small">
                                 លោកវេជ្ជបណ្ឌិត យិន វុឌ្ឍី<br>
                                 លោកស្រី អេង រ័ត្នឆវី
                             </div>
                         </div>
                         <!-- Title -->
-                        <div class="text-center fw-semibold mb-4" style="font-size: 1.5rem;">
+                        <div class="text-center fw-semibold mb-4 pop-up-on-scroll" style="font-size: 1.5rem;">
                             មានកិត្តិយសសូមគោរពអញ្ជើញ
                         </div>
 
                         <!-- Invitation Message -->
-                        <div class="text-center mx-auto mt-4 small" style="max-width: 640px;">
+                        <div class="text-center mx-auto mt-4 small pop-up-on-scroll" style="max-width: 640px;">
                             សូមគោរពអញ្ចើញ ឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា
                             ចូលរួមជាភ្ញៀវចូលរួមជាអធិបតីភាព
                             និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យសិរិសួស្តីជ័យមង្គល
@@ -218,13 +218,12 @@
                         </div>
 
                         <!-- Logo and Names -->
-                        <div class="position-relative fw-semibold mt-4">
+                        <div class="position-relative fw-semibold mt-4 pop-up-on-scroll">
 
                             <!-- Logo -->
                             <div class="text-center">
-                                <img src="https://ik.imagekit.io/ananisai/assets/NicholasMarryViriya/logo2.png"
-                                    class="img-fluid mx-auto" style="max-width: 13rem;" loading="lazy"
-                                    alt="Wedding Logo">
+                                <img src="images/logo-1.svg" class="img-fluid mx-auto" style="max-width: 10rem;"
+                                    loading="lazy" alt="Wedding Logo">
                             </div>
 
                             <!-- Groom & Bride Names -->
@@ -234,34 +233,35 @@
                                 <div class="text-center small">
                                     <p class="mb-1" style="font-size: 10px;">កូនប្រុសនាម</p>
                                     <div>
-                                        <p class="mb-0">ពិសាល នីកូឡា</p>
-                                        <p class="mb-0">កៅ</p>
+                                        <p class="mb-0">សាក់</p>
+                                        <p class="mb-0"> ប្រុស លាប</p>
                                     </div>
                                 </div>
                                 <!-- Bride -->
                                 <div class="text-center small">
                                     <p class="mb-1" style="font-size: 10px;">កូនស្រីនាម</p>
                                     <div>
-                                        <p class="mb-0">រ័ត្នវីរីយ៉ា</p>
-                                        <p class="mb-0">វុឌ្ឍី</p>
+                                        <p class="mb-0">ប៊ុនថុន </p>
+                                        <p class="mb-0">កញ្ញា</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Ceremony Time -->
-                        <div class="text-center small mt-4">
+                        <div class="text-center small mt-4 pop-up-on-scroll">
                             ដែលនឹងប្រព្រឹត្តទៅ ចាប់ពីម៉ោង ១៧:០០
                         </div>
 
                         <!-- Ceremony Date -->
-                        <div class="fw-semibold text-center mt-3 text-uppercase" style="font-size: 1.5rem;">
+                        <div class="fw-semibold text-center mt-3 text-uppercase pop-up-on-scroll"
+                            style="font-size: 1.5rem;">
                             ថ្ងៃអាទិត្យ ទី២៨ ខែមករា<br>
                             <span style="font-size: 2rem;">ឆ្នាំ២០២៤</span>
                         </div>
 
                         <!-- Calendar Button -->
-                        <div class="d-flex justify-content-center mt-3">
+                        <div class="d-flex justify-content-center mt-3 pop-up-on-scroll">
                             <button
                                 class="btn position-relative p-0 border-0 d-flex align-items-center justify-content-center animation_btn"
                                 style="width: 140px; height: 34px; overflow: hidden;">
@@ -277,12 +277,10 @@
                                 </span>
                             </button>
                         </div>
-
-
                     </div>
                 </div>
             </section>
-            <section id=" agenda" class="position-relative">
+            <section id=" agenda" class="position-relative  ">
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="px-4 mt-5">
                         <!-- Section Title -->
@@ -293,30 +291,23 @@
                         <div class="px-4 text-center fw-medium" style="font-size: 1rem; color: #C7A754;">
                             <!-- Morning Agenda -->
                             <div>
-                                <h2 class="fw-semibold mb-4" style="font-size: 1.25rem;">
+                                <h2 class="fw-semibold mb-4 slide-in-left" style="font-size: 1.25rem;">
                                     កម្មវិធីពេលព្រឹក
                                 </h2>
                                 <!-- Event 1 -->
-                                <div class="mb-3">
+                                <div class="mb-3 slide-in-right">
                                     <div class="position-relative d-flex flex-column align-items-center">
-                                        <!--
-                                         <div class="position-absolute top-0 translate-middle rounded-circle border border-2"
-                                                style="width: 1.5rem; height: 1.5rem; border-color: #C7A754; top: -1.5rem;">
-                                            </div>
-                                            <div style="width: 2px; height: 1.5rem; background-color: #C7A754;">
-                                            </div>
-                                            -->
                                         <img src="images/icon-1-01.svg" alt=""
                                             style="width: 4rem; height: 4rem; top: -1.5rem;">
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">៧:០០ នាទីព្រឹក
+                                    <p class="my-1 " style="font-size: 1.25rem;">៧:០០ នាទីព្រឹក
                                     </p>
                                     <p class="text-uppercase" style="font-size: 1rem;">
                                         ពិធីហែជំនូន ទទួលផ្លាស្លា ចូលរោងជ័យ <br>
                                         អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក</p>
                                 </div>
                                 <!-- Event 2 -->
-                                <div class="mb-3">
+                                <div class="mb-3 slide-in-left">
                                     <div>
                                         <img src="images/ring-01.svg" alt=""
                                             style="width: 4rem; height: 4rem; top: -1.5rem;">
@@ -325,7 +316,7 @@
                                     <p class="text-uppercase" style="font-size: 1rem;">ពិធីបំពាក់ចិញ្ជៀន</p>
                                 </div>
                                 <!-- Event 3 -->
-                                <div class="mb-3">
+                                <div class="mb-3 slide-in-right">
                                     <div>
                                         <img src="images/monk1-01.svg" alt=""
                                             style="width: 4rem; height: 4rem; top: -1.5rem;">
@@ -335,7 +326,7 @@
                                         ពិធីសូត្រមន្ត ចម្រើនព្រះបរិត្ត</p>
                                 </div>
                                 <!-- Event 4 -->
-                                <div class="mb-3">
+                                <div class="mb-3 slide-in-left">
                                     <div>
                                         <img src="images/sissor-01.svg" alt=""
                                             style="width: 4rem; height: 4rem; top: -1.5rem;">
@@ -345,7 +336,7 @@
                                         ពិធីកាត់សក់បង្កក់សិរី</p>
                                 </div>
                                 <!-- Event 5 -->
-                                <div class="mb-3">
+                                <div class="mb-3 slide-in-right">
                                     <div>
                                         <img src="images/h&w-01.svg" alt=""
                                             style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
@@ -356,7 +347,7 @@
                                     </p>
                                 </div>
                                 <!-- Event 5 -->
-                                <div class="mb-5">
+                                <div class="mb-5 slide-in-left">
                                     <div>
                                         <img src="images/lunch-01-01.svg" alt=""
                                             style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
@@ -369,11 +360,11 @@
                             </div>
                             <!-- Evening Agenda -->
                             <div>
-                                <h2 class="fw-semibold my-4" style="font-size: 1.25rem;">
+                                <h2 class="fw-semibold my-4 slide-in-right" style="font-size: 1.25rem;">
                                     កម្មវិធីពេលល្ងាច</h2>
 
                                 <!-- Evening Event -->
-                                <div class="mb-4">
+                                <div class="mb-4 slide-in-left">
                                     <div class="position-relative d-flex flex-column align-items-center">
                                         <img src="images/dinner-01.svg" alt=""
                                             style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
@@ -389,55 +380,59 @@
                     </div>
                 </div>
             </section>
-            <section id="gallery" class="position-relative">
-                <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100"
-                    style="max-width: 640px; color: #C7A754; margin-top: 100px;">
-                    <div class="images">
-                        <!-- Image Gallery -->
-                        <!-- First Row: Single Large Image -->
-                        <div class="rows">
-                            <img src="images/images5.png" alt="Gallery Image 5" class="large-image"
-                                onclick="openLightbox(4)" loading="lazy" />
+            <section id="gallery" class="position-relative slide-in">
+                <div class="d-flex flex-column w-100 h-100">
+
+
+                    <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100"
+                        style="max-width: 640px; color: #C7A754; margin-top: 100px;">
+                        <div class="images">
+                            <!-- Image Gallery -->
+                            <!-- First Row: Single Large Image -->
+                            <div class="rows">
+                                <img src="images/images5.png" alt="Gallery Image 5" class="large-image"
+                                    onclick="openLightbox(4)" loading="lazy" />
+                            </div>
+                            <!-- Second Row: Two Smaller Images -->
+                            <div class="rows">
+                                <img src="images/images6.png" alt="Gallery Image 6" class="small-image"
+                                    onclick="openLightbox(5)" loading="lazy" />
+                                <img src="images/images7.png" alt="Gallery Image 7" class="small-image"
+                                    onclick="openLightbox(6)" loading="lazy" />
+                            </div>
+                            <!-- Third Row: Single Large Image -->
+                            <div class="rows">
+                                <img src="images/images8.png" alt="Gallery Image 8" class="large-image"
+                                    onclick="openLightbox(7)" loading="lazy" />
+                            </div>
+                            <div class="rows">
+                                <img src="images/images9.png" alt="Gallery Image 5" class="large-image"
+                                    onclick="openLightbox(8)" loading="lazy" />
+                            </div>
+                            <!-- Second Row: Two Smaller Images -->
+                            <div class="rows">
+                                <img src="images/images10.png" alt="Gallery Image 6" class="small-image"
+                                    onclick="openLightbox(9)" loading="lazy" />
+                                <img src="images/images11.png" alt="Gallery Image 7" class="small-image"
+                                    onclick="openLightbox(10)" loading="lazy" />
+                            </div>
+                            <!-- Third Row: Single Large Image -->
+                            <div class="rows">
+                                <img src="images/images12.png" alt="Gallery Image 8" class="large-image"
+                                    onclick="openLightbox(11)" loading="lazy" />
+                            </div>
                         </div>
-                        <!-- Second Row: Two Smaller Images -->
-                        <div class="rows">
-                            <img src="images/images6.png" alt="Gallery Image 6" class="small-image"
-                                onclick="openLightbox(5)" loading="lazy" />
-                            <img src="images/images7.png" alt="Gallery Image 7" class="small-image"
-                                onclick="openLightbox(6)" loading="lazy" />
+                        <!-- Lightbox Modal -->
+                        <div id="lightbox" class="lightbox hidden">
+                            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+                            <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
+                            <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
+                            <img src="" alt="Enlarged Image" id="lightbox-image" />
                         </div>
-                        <!-- Third Row: Single Large Image -->
-                        <div class="rows">
-                            <img src="images/images8.png" alt="Gallery Image 8" class="large-image"
-                                onclick="openLightbox(7)" loading="lazy" />
-                        </div>
-                        <div class="rows">
-                            <img src="images/images9.png" alt="Gallery Image 5" class="large-image"
-                                onclick="openLightbox(8)" loading="lazy" />
-                        </div>
-                        <!-- Second Row: Two Smaller Images -->
-                        <div class="rows">
-                            <img src="images/images10.png" alt="Gallery Image 6" class="small-image"
-                                onclick="openLightbox(9)" loading="lazy" />
-                            <img src="images/images11.png" alt="Gallery Image 7" class="small-image"
-                                onclick="openLightbox(10)" loading="lazy" />
-                        </div>
-                        <!-- Third Row: Single Large Image -->
-                        <div class="rows">
-                            <img src="images/images12.png" alt="Gallery Image 8" class="large-image"
-                                onclick="openLightbox(11)" loading="lazy" />
-                        </div>
-                    </div>
-                    <!-- Lightbox Modal -->
-                    <div id="lightbox" class="lightbox hidden">
-                        <span class="close-btn" onclick="closeLightbox()">&times;</span>
-                        <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-                        <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-                        <img src="" alt="Enlarged Image" id="lightbox-image" />
                     </div>
                 </div>
             </section>
-            <section id="location" class="position-relative">
+            <section id="location" class="position-relative slide-in">
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
 
@@ -498,109 +493,76 @@
                     </div>
                 </div>
             </section>
-            <section id="payment" class="position-relative">
+            <section id="payment" class="position-relative slide-in">
                 <div class="d-flex flex-column w-100 h-100">
-                    <div class="d-flex flex-column justify-content-center align-items-center ">
-
-                        <!-- Title -->
+                    <div class="d-flex flex-column justify-content-center align-items-center min-vh-100  ">
                         <div class="text-center fw-semibold " style="color: #C7A754; font-size: 1.5rem;">
                             ចំណងដៃ
                         </div>
-
-                        <!-- Subtitle -->
                         <div class="text-center" style="color: #C7A754; font-size: 1.25rem;  padding-bottom: 0.5rem;">
                             សូមស្កេន QR ខាងក្រោម
                         </div>
-
-                        <!-- Map Image -->
-                        <div class="mt-3 w-100 text-center">
-                            <img loading="lazy" src="images/khqr.jpg" alt="Map" class="img-fluid"
-                                style="max-width: 200px; width: 70%; object-fit: contain;">
+                        <div class="mt-3 w-100 d-flex justify-content-center text-center">
+                            <form class="d-flex flex-column" action="https://formspree.io/f/xvgqkkev" method="POST">
+                                <label>
+                                    <textarea class="form-control" name="message"></textarea>
+                                </label>
+                                <!-- your other form fields go here -->
+                                <button type="submit">Send</button>
+                            </form>
                         </div>
-
-                        <!-- Map Button -->
-                        <!---
-                             <div class="d-flex justify-content-center mt-4">
-                                <a target="_blank" href="https://maps.app.goo.gl/aXpKsD7kzqBAdYPJ9"
-                                    class="btn border border-primary rounded-pill px-4 py-2 text-primary"
-                                    style="transition: all 0.3s ease;"
-                                    onmouseover="this.classList.add('bg-primary','text-white')"
-                                    onmouseout="this.classList.remove('bg-primary','text-white')">
-                                    ចុចដើម្បីចង់ចំណងដៃ
-                                </a>
-                            </div>
-                             -->
-                        <button
-                            class="btn position-relative p-0 border-0 d-flex align-items-center justify-content-center mt-4"
-                            style="width: 140px; height: 34px; overflow: hidden;">
-                            <!-- Background image absolutely positioned -->
-                            <img src="images/button.svg" alt="Calendar Icon"
-                                class="w-100 h-100 position-absolute top-0 start-0"
-                                style="z-index: 1; object-fit: cover;">
-
-                            <!-- Text centered on top -->
-                            <span class="position-relative text-uppercase fw-semibold"
-                                style="padding-top: 4px; padding-bottom: 4px;line-height: 1.2;font-size: 0.9rem;color: #C7A754">
-                                ចុចដើម្បីចង់ចំណងដៃ
-                            </span>
-                        </button>
-
                     </div>
                 </div>
             </section>
-            <section id="aboutus" class="position-relative py-5">
-                <div class="container d-flex flex-column align-items-center text-center text-warning"
-                    style="color: #C7A754;">
-
-                    <!-- Logo -->
-                    <img src="images/invitely_logo-01.svg" width="200" height="200" alt="Ananisai Logo"
-                        class="img-fluid mb-4" loading="lazy" decoding="async">
-
-                    <!-- Text -->
-                    <p class="px-3 px-md-5" style="color: #C7A754;">
-                        តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងសម្រាប់កម្មវិធីរបស់លោកអ្នកដែរឬទេ?
-                    </p>
-                    <p style="color: #C7A754;">ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
-
-                    <!-- Contact Info -->
-                    <div class="d-flex flex-column gap-2 mt-3" style="color: #C7A754;">
-                        <a href="tel:098456866" class="text-decoration-none text-reset">លេខទូរស័ព្ទ: 096 607
-                            9486</a>
-                        <a href="mailto:ananisai.kh@gmail.com" class="text-decoration-none text-reset">អុីមែល:
-                            info.invitely@gmail.com</a>
+            <section id="aboutus" class="position-relative">
+                <div class="d-flex flex-column w-100 h-100">
+                    <div class="d-flex flex-column justify-content-center align-items-center mt-5 vh-100 text-center text-warning fw-light"
+                        style="color: #C7A754;">
+                        <!-- Logo -->
+                        <img src="images/invitely_logo-01.svg" width="200" height="200" alt="Ananisai Logo"
+                            class="img-fluid mb-4" loading="lazy" decoding="async">
+                        <!-- Text -->
+                        <p class="px-3 px-md-5" style="color: #C7A754;">
+                            តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងសម្រាប់កម្មវិធីរបស់លោកអ្នកដែរឬទេ?
+                        </p>
+                        <p style="color: #C7A754;">ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
+                        <!-- Contact Info -->
+                        <div class="d-flex flex-column gap-2 mt-3" style="color: #C7A754;">
+                            <a href="tel:098456866" class="text-decoration-none text-reset">លេខទូរស័ព្ទ: 096 607
+                                9486</a>
+                            <a href="mailto:ananisai.kh@gmail.com" class="text-decoration-none text-reset">អុីមែល:
+                                info.invitely@gmail.com</a>
+                        </div>
+                        <!-- Social Icons -->
+                        <div class="d-flex gap-4 mt-4">
+                            <!-- Instagram -->
+                            <a href="https://www.facebook.com/" target="_blank"
+                                class="d-flex flex-column align-items-center text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                </svg>
+                            </a>
+                            <!-- Telegram -->
+                            <a href="https://t.me/" target="_blank"
+                                class="d-flex flex-column align-items-center text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
+                                </svg>
+                            </a>
+                            <a href="http://instagram.com/" target="_blank"
+                                class="d-flex flex-column align-items-center text-decoration-none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
+                                    class="bi bi-instagram" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-
-                    <!-- Social Icons -->
-                    <div class="d-flex gap-4 mt-4">
-
-                        <!-- Instagram -->
-                        <a href="https://www.facebook.com/" target="_blank"
-                            class="d-flex flex-column align-items-center text-decoration-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                            </svg>
-                        </a>
-                        <!-- Telegram -->
-                        <a href="https://t.me/" target="_blank"
-                            class="d-flex flex-column align-items-center text-decoration-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
-                                viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
-                            </svg>
-                        </a>
-                        <a href="http://instagram.com/" target="_blank"
-                            class="d-flex flex-column align-items-center text-decoration-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
-                                class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                            </svg>
-                        </a>
-                    </div>
-
                 </div>
             </section>
         </div>
