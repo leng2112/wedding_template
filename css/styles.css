@@ -263,3 +263,35 @@ text {
   opacity: 1;
   transform: scale(1);
 }
+.custom-btn {
+  border: 1.5px solid #C7A754;
+  color: #C7A754;
+  background-color: transparent;
+  margin-top: 10px;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #C7A754;
+  color: white;
+}
+.btn-01 {
+  width: 220px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.btn-audio {
+            width: 50px;
+          height: 50px;
+          border: 2px solid #C7A754;
+          background-color: white;
+          position: fixed;
+          bottom: 1rem;
+          right: 1rem;
+          z-index: 1050;
+          transition: background-color 0.3s ease;
+}
