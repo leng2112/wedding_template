@@ -6,6 +6,8 @@ body {
   font-family: "Kantumruy Pro", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
+  max-width: 420px;   /* lock site to mobile width */
+  margin: 0 auto; 
 }
 
 .h-screen-l {
@@ -213,6 +215,7 @@ text {
   background-color: transparent;
   animation: pulse 2.5s infinite ease-in-out;
 }
+
 @keyframes pulse {
   0% {
     transform: scale(0.97);
@@ -263,8 +266,8 @@ text {
   transform: scale(1);
 }
 .custom-btn {
-  border: 1.5px solid #C7A754;
-  color: #C7A754;
+  border: 1.5px solid #333366;
+  color: #333366;
   background-color: transparent;
   margin-top: 10px;
   padding: 0.3rem 1rem;
@@ -274,7 +277,7 @@ text {
 }
 
 .custom-btn:hover {
-  background-color: #C7A754;
+  background-color:#333366;
   color: white;
 }
 .btn-01 {
@@ -286,13 +289,29 @@ text {
 .btn-audio {
  width: 50px;
   height: 50px;
-  border: 2px solid #C7A754;
+  border: 2px solid #333366;
   background-color: white;
   position: fixed;
   bottom: 1rem;
   right: 1rem;
   z-index: 1050;
 }
-#audioToggle {
-  transition: opacity 0.3s ease;
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; /* crop 30% on small screens */
+  }
+}
+.text-box {
+  background-color: rgba(252, 251, 244, 0.71);
+  color: #333366;
+  margin: 0 30px;
+  opacity: 0;
+  transform: translateY(30px); /* slide in effect */
+  transition: opacity 0.9s  ease, transform 0.9s ease;
+}
+
+.text-box.show {
+  opacity: 1;
+  transform: translateX(0);
 }
