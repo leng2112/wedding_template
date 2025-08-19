@@ -2,8 +2,25 @@ const firstPage = document.getElementById('first-page');
 const popupPage = document.getElementById('popup-page');
 const scrollablePage = document.getElementById('scrollable-page');
 const popupVideo = document.getElementById('popup-video');
+const startButton = document.getElementById('start-button');
 
-document.getElementById('start-button').addEventListener('click', () => {
+// Function to show scrollable page after video
+function handleVideoEnd() {
+  popupPage.style.opacity = '0';
+  setTimeout(() => {
+    popupPage.style.display = 'none';
+    firstPage.style.display = 'none';
+
+    // Show scrollable page
+    scrollablePage.style.display = 'block';
+    scrollablePage.style.transition = 'opacity 0.3s ease-in-out';
+    setTimeout(() => {
+      scrollablePage.style.opacity = '1';
+    }, 50);
+  }, 300);
+}
+
+startButton.addEventListener('click', () => {
   // Fade out first page
   firstPage.style.transition = 'opacity 0.3s ease-in-out';
   firstPage.style.opacity = '0';
@@ -11,27 +28,30 @@ document.getElementById('start-button').addEventListener('click', () => {
   // Show popup
   popupPage.style.display = 'flex';
   popupPage.style.transition = 'opacity 0.3s ease-in-out';
+
   setTimeout(() => {
     popupPage.style.opacity = '1';
-    popupVideo.currentTime = 0; // restart video from beginning
-    popupVideo.play();
+    popupVideo.currentTime = 0; // restart video
+
+    // Try to autoplay
+    popupVideo.play().then(() => {
+      // Fallback timer in case Safari never fires "ended"
+      const duration = popupVideo.duration;
+      if (!isNaN(duration)) {
+        setTimeout(() => {
+          if (popupVideo.ended) return;
+          handleVideoEnd();
+        }, duration * 1000 + 500);
+      }
+    }).catch(err => {
+      console.warn("Autoplay blocked or failed:", err);
+      handleVideoEnd(); // Skip video if autoplay fails
+    });
   }, 50);
 
-  // Wait until video ends, then show scrollable page
-  popupVideo.onended = () => {
-    popupPage.style.opacity = '0';
-    setTimeout(() => {
-      popupPage.style.display = 'none';
-      firstPage.style.display = 'none';
-
-      // Show scrollable page
-      scrollablePage.style.display = 'block';
-      scrollablePage.style.transition = 'opacity 0.3s ease-in-out';
-      setTimeout(() => {
-        scrollablePage.style.opacity = '1';
-      }, 50);
-    }, 300); // matches fade-out
-  };
+  // Ensure both event methods are covered
+  popupVideo.onended = handleVideoEnd;
+  popupVideo.addEventListener('ended', handleVideoEnd);
 });
 
 
@@ -188,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const audio = document.getElementById('backgroundAudio');
 const audioToggle = document.getElementById('audioToggle');
 const audioIcon = document.getElementById('audioIcon');
-const startButton = document.getElementById('start-button');
+
 
 // ===== SVG icons =====
 // ===== SVG icons =====
