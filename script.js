@@ -54,47 +54,69 @@ startButton.addEventListener('click', () => {
   popupVideo.addEventListener('ended', handleVideoEnd);
 });
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  const images = [
-    "images/images1.jpeg",
-    "images/images2.jpeg",
-    "images/images3.jpeg",
-    "images/images4.jpeg",
-    "images/images5.jpeg",
-    "images/images6.jpeg",
-    "images/images7.jpeg",
-    "images/images8.jpeg",
-    "images/images9.jpeg",
-    "images/images10.jpeg",
-    "images/images11.jpeg",
-    "images/images12.jpeg",
-  ];
+  const galleries = {
+    gallery1st: [
+      "images/images1.jpeg",
+      "images/images2.jpeg",
+      "images/images3.jpeg",
+      "images/images4.jpeg",
+    ],
+    gallery2nd: [
+      "images/images5.jpeg",
+      "images/images6.jpeg",
+      "images/images7.jpeg",
+      "images/images8.jpeg",
+      "images/images9.jpeg",
+      "images/images10.jpeg",
+      "images/images11.jpeg",
+      "images/images12.jpeg",
+    ],
+  };
 
+  let currentGallery = null;
   let currentIndex = 0;
 
   // Open Lightbox
-  window.openLightbox = function(index) {
+  window.openLightbox = function (galleryId, index) {
+    currentGallery = galleryId;
     currentIndex = index;
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightbox-image");
-    lightboxImage.src = images[currentIndex];
+
+    const section = document.getElementById(galleryId);
+    const lightbox = section.querySelector(".lightbox");
+    const lightboxImage = section.querySelector(".lightbox-image"); // Use class, not id
+
+    if (!lightboxImage) {
+      console.error("Lightbox image not found in section:", galleryId);
+      return;
+    }
+
+    lightboxImage.src = galleries[galleryId][currentIndex];
     lightbox.classList.remove("hidden");
-  }
+  };
+
+  // Change Image (Next/Prev)
+  window.changeImage = function (galleryId, step) {
+    const gallery = galleries[galleryId];
+    currentIndex = (currentIndex + step + gallery.length) % gallery.length;
+    
+    const section = document.getElementById(galleryId);
+    const lightboxImage = section.querySelector(".lightbox-image");
+
+    if (lightboxImage) {
+      lightboxImage.src = gallery[currentIndex];
+    }
+  };
 
   // Close Lightbox
-  window.closeLightbox = function() {
-    document.getElementById("lightbox").classList.add("hidden");
-  }
-
-  // Change Image
-  window.changeImage = function(step) {
-    currentIndex = (currentIndex + step + images.length) % images.length;
-    document.getElementById("lightbox-image").src = images[currentIndex];
-  }
+  window.closeLightbox = function (event) {
+    const lightbox = event.currentTarget; // The .lightbox element itself
+    if (event.target === lightbox) {
+      lightbox.classList.add("hidden");
+    }
+  };
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -283,18 +305,9 @@ window.addEventListener("scroll", () => {
     ticking = true;
   }
 });
-
-
-
-
-
-  // Initialize Bootstrap tooltip
-  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
-
       document.addEventListener("DOMContentLoaded", function () {
         const playBtn = document.getElementById("start-button");
-        const video = document.getElementById("introVideo");
+        const video = document.getElementById("popup-video");
 
         // When button clicked → show and play video
         playBtn.addEventListener("click", () => {
@@ -309,3 +322,9 @@ window.addEventListener("scroll", () => {
             nextSection.scrollIntoView({ behavior: "smooth" });
         });
     });
+
+  // Initialize Bootstrap tooltip
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+
+

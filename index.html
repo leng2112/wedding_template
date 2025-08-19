@@ -8,9 +8,9 @@
     <!-- Static fallback OG meta -->
     <meta property="og:title" content="Couple Name" />
     <meta property="og:description" content="Together with our families, we hope you can join us to celebrate." />
-    <meta property="og:image" content="https://i.postimg.cc/T1JQZ1Cg/images10.jpg" />
+    <meta property="og:image" content="https://github.com/leng2112/wedding_template/blob/main/images/images10.jpeg" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:url" content="https://leng2112.github.io/wedding_template/" />
 
     <title>Wedding Invitation</title>
 
@@ -27,6 +27,9 @@
         href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <!-- Dynamic OG title using JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -157,26 +160,27 @@
                         <!-- First Row: Single Large Image -->
                         <div class="rows">
                             <img src="images/images1.jpeg" alt="Gallery Image 1" class="large-image"
-                                onclick="openLightbox(0)" loading="lazy" />
+                                onclick="openLightbox('gallery1st', 0)" loading="lazy" />
                         </div>
                         <!-- Second Row: Two Smaller Images -->
                         <div class="rows">
                             <img src="images/images2.jpeg" alt="Gallery Image 2" class="small-image"
-                                onclick="openLightbox(1)" loading="lazy" />
+                                onclick="openLightbox('gallery1st', 1)" loading="lazy" />
                             <img src="images/images3.jpeg" alt="Gallery Image 3" class="small-image"
-                                onclick="openLightbox(2)" loading="lazy" />
+                                onclick="openLightbox('gallery1st', 2)" loading="lazy" />
                         </div>
                         <!-- Third Row: Single Large Image -->
                         <div class="rows">
                             <img src="images/images4.jpeg" alt="Gallery Image 4" class="large-image"
-                                onclick="openLightbox(3)" loading="lazy" />
+                                onclick="openLightbox('gallery1st', 3)" loading="lazy" />
                         </div>
-                        <!-- Lightbox Modal -->
-                        <div id="lightbox" class="lightbox hidden">
-                            <span class="close-btn" onclick="closeLightbox()">&times;</span>
-                            <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-                            <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-                            <img src="" alt="Enlarged Image" id="lightbox-image" />
+                    </div>
+                    <div class="lightbox hidden" onclick="closeLightbox(event)">
+                        <div class="lightbox-content">
+                            <img class="lightbox-image" src="" alt="Enlarged Image" />
+
+                            <button class="prev-btn" onclick="changeImage('gallery1st', -1)">&#10094;</button>
+                            <button class="next-btn" onclick="changeImage('gallery1st', 1)">&#10095;</button>
                         </div>
                     </div>
                 </div>
@@ -367,7 +371,7 @@
                     </div>
                 </div>
             </section>
-            <section id="gallery" class="position-relative">
+            <section id="gallery2nd" class="position-relative">
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100" style="max-width: 640px;" margin-top: 100px;>
                         <div class="images">
@@ -375,43 +379,43 @@
                             <!-- First Row: Single Large Image -->
                             <div class="rows">
                                 <img src="images/images5.jpeg" alt="Gallery Image 5" class="large-image"
-                                    onclick="openLightbox(4)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 0)" loading="lazy" />
                             </div>
                             <!-- Second Row: Two Smaller Images -->
                             <div class="rows">
                                 <img src="images/images6.jpeg" alt="Gallery Image 6" class="small-image"
-                                    onclick="openLightbox(5)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 1)" loading="lazy" />
                                 <img src="images/images7.jpeg" alt="Gallery Image 7" class="small-image"
-                                    onclick="openLightbox(6)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 2)" loading="lazy" />
                             </div>
                             <!-- Third Row: Single Large Image -->
                             <div class="rows">
                                 <img src="images/images8.jpeg" alt="Gallery Image 8" class="large-image"
-                                    onclick="openLightbox(7)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 3)" loading="lazy" />
                             </div>
                             <div class="rows">
                                 <img src="images/images9.jpeg" alt="Gallery Image 5" class="large-image"
-                                    onclick="openLightbox(8)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 4)" loading="lazy" />
                             </div>
                             <!-- Second Row: Two Smaller Images -->
                             <div class="rows">
                                 <img src="images/images10.jpeg" alt="Gallery Image 6" class="small-image"
-                                    onclick="openLightbox(9)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 5)" loading="lazy" />
                                 <img src="images/images11.jpeg" alt="Gallery Image 7" class="small-image"
-                                    onclick="openLightbox(10)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 6)" loading="lazy" />
                             </div>
                             <!-- Third Row: Single Large Image -->
                             <div class="rows">
                                 <img src="images/images12.jpeg" alt="Gallery Image 8" class="large-image"
-                                    onclick="openLightbox(11)" loading="lazy" />
+                                    onclick="openLightbox('gallery2nd', 7)" loading="lazy" />
                             </div>
                         </div>
-                        <!-- Lightbox Modal -->
-                        <div id="lightbox" class="lightbox hidden">
-                            <span class="close-btn" onclick="closeLightbox()">&times;</span>
-                            <button class="prev-btn" onclick="changeImage(-1)">&#10094;</button>
-                            <button class="next-btn" onclick="changeImage(1)">&#10095;</button>
-                            <img src="" alt="Enlarged Image" id="lightbox-image" />
+                        <div class="lightbox hidden" onclick="closeLightbox(event)">
+                            <div class="lightbox-content">
+                                <img class="lightbox-image" src="" alt="Enlarged Image" />
+                                <button class="prev-btn" onclick="changeImage('gallery2nd', -1)">&#10094;</button>
+                                <button class="next-btn" onclick="changeImage('gallery2nd', 1)">&#10095;</button>
+                            </div>
                         </div>
                     </div>
                 </div>

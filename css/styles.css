@@ -121,35 +121,44 @@ text {
 }
 
 .lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
   display: flex;
+  position: absolute;
+  /* Changed from fixed */
+  inset: 0;
+  /* Shorthand for top, right, bottom, left 0 */
+  background: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-}
-
-.lightbox.hidden {
-  display: none;
-}
-
-#lightbox-image {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  font-size: 2rem;
+  z-index: 1000;
   cursor: pointer;
+}
+
+.lightbox-content {
+  display: flex;
+  justify-content: center;
+  max-width: 90%;
+  /* Limits the size of the content container */
+  max-height: 90%;
+  /* Limits the size of the content container */
+  position: relative;
+}
+
+/* Add this to your CSS for the gallery sections */
+#gallery1st,
+#gallery2nd {
+  position: relative;
+  /* Crucial: Make the parent section a positioning context */
+  /* Add other styling for your gallery sections like padding, margin, height, etc. */
+}
+
+/* Ensure the image inside the lightbox fits within its container */
+.lightbox-image {
+  max-width: 90%;
+  /* Adjust as needed */
+  max-height: 90%;
+  /* Adjust as needed */
+  object-fit: contain;
+  /* Ensures the image scales down without cropping */
 }
 
 .prev-btn,
@@ -157,30 +166,28 @@ text {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0);
   color: white;
-  font-size: 1rem;
   border: none;
-  cursor: pointer;
-  padding: 10px;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+
 }
 
 .prev-btn {
-  left: 20px;
+  left: -18px;
 }
 
 .next-btn {
-  right: 20px;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-  transform: scale(1.05);
+  right: -16px;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Fade-in effect */
