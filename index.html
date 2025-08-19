@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=420, user-scalable=no">
 
     <!-- Static fallback OG meta -->
     <meta property="og:title" content="Couple Name" />
     <meta property="og:description" content="Together with our families, we hope you can join us to celebrate." />
-    <meta property="og:image" content="https://yourdomain.com/assets/og-image.jpg" />
+    <meta property="og:image" content="https://i.postimg.cc/T1JQZ1Cg/images10.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourdomain.com" />
 
@@ -26,10 +26,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <!-- Bootstrap JS (use CDN or local file) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Dynamic OG title using JavaScript -->
     <script>
@@ -61,66 +57,53 @@
     <audio id="backgroundAudio" autoplay loop muted>
         <source src="wedding_background_instrument.mp3" />
     </audio>
-    <!-- Background Image -->
-    <img src="images/background.png" alt="background"
+    <!-- Background Image ---->
+    <img src="images/bg2.jpg" alt="background"
         class="position-fixed top-0 start-0 w-100 h-100 object-fit-cover  d-lg-block"
         style="z-index: -100; background-size: cover;">
+
     <!-- First Page -->
     <header id="first-page">
-        <div class="d-flex flex-column justify-content-center align-items-center w-100 position-relative"
+        <div class="d-flex justify-content-center align-items-center w-100 position-relative"
             style="height: 100vh; z-index: 10;">
+            <img src="images/bg_page1.jpeg" alt="background" class="position-fixed top-0 start-50 translate-middle-x"
+                style="width:420px; height:100vh; object-fit:cover; z-index:-100;">
             <!-- Logo -->
-            <div class="z-3">
-                <img alt="logo" loading="lazy" width="204" height="278" decoding="async" src="images/logo.svg"
-                    class="img-fluid">
-            </div>
-            <!-- Title -->
-            <div class="text-center mt-5">
-                <h1 class="fw-semibold fs-4" style="color: #C7A754;">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
-                <p class="fw-semibold fs-4" style="color: #C7A754;">សូមគោរពអញ្ចើញ</p>
-                <h2 id="guestName" style="color: #C7A754;">Guest</h2>
-
-            </div>
-            <!-- Open Button -->
-            <div class="d-flex justify-content-center mt-3">
-                <button id="start-button"
-                    class="btn btn-01  position-relative p-0 border-0 d-flex align-items-center justify-content-center animation_btn">
-                    <!-- Background image absolutely positioned -->
-                    <img src="images/button.svg" alt="Calendar Icon" class="w-100 h-100 position-absolute top-0 start-0"
-                        style="z-index: 1; object-fit: cover;">
-
-                    <!-- Text centered on top -->
-                    <span class="position-relative text-uppercase fw-semibold"
-                        style="padding-top: 4px; padding-bottom: 4px;line-height: 1.2;font-size: 0.9rem;color: #C7A754">
-                        សូមចុចបើកសំបុត្រ
-                    </span>
-                </button>
+            <div id="start-button"
+                class="position-absolute bottom-0 start-50 translate-middle-x w-100  w-50 w-md-75 w-lg-100"
+                style="margin-bottom: 8rem;">
+                <img alt="logo" loading="lazy" decoding="async" src="images/logo_v1-05.png" class="img-fluid">
             </div>
         </div>
     </header>
-    <!-- Pop-up Page -->
-    <div id="popup-page">
-        <img src="images/opening_img.webp" loading="lazy" class="position-absolute top-50 start-50 translate-middle"
-            style="width: 100vw; height: 100vh; object-fit: cover;" alt="popup image" />
+    <!-- Popup Page -->
+    <div id="popup-page" class="justify-content-center align-items-center position-fixed w-100 h-100"
+        style="display: none; opacity: 0; background: rgba(0,0,0,0.8); top:0; left:0; ">
+        <video id="popup-video" playsinline webkit-playsinline muted preload="auto"
+            style="max-width:100%; max-height:100%;">
+            <source src="images/open_clip.mp4" type="video/mp4">
+        </video>
     </div>
-    <main id="scrollable-page" class="position-relative min-vh-100">
-        <div class="d-flex flex-column w-100 min-vh-100">
-            <button id="audioToggle" class="d-flex align-items-center justify-content-center rounded-circle btn-audio"
-                data-bs-toggle="tooltip" data-bs-placement="left">
-                <span id="audioIcon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="#C7A754" class="p-1" width="32"
-                        height="32">
-                        <path
-                            d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z" />
-                    </svg>
-                </span>
-            </button>
+
+
+    <button id="audioToggle" class="d-flex align-items-center justify-content-center rounded-circle btn-audio"
+        data-bs-toggle="tooltip" data-bs-placement="left">
+        <span id="audioIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="333366" class="p-1" width="32"
+                height="32">
+                <path
+                    d="M80 416L128 416L262.1 535.2C268.5 540.9 276.7 544 285.2 544C304.4 544 320 528.4 320 509.2L320 130.8C320 111.6 304.4 96 285.2 96C276.7 96 268.5 99.1 262.1 104.8L128 224L80 224C53.5 224 32 245.5 32 272L32 368C32 394.5 53.5 416 80 416zM399 239C389.6 248.4 389.6 263.6 399 272.9L446 319.9L399 366.9C389.6 376.3 389.6 391.5 399 400.8C408.4 410.1 423.6 410.2 432.9 400.8L479.9 353.8L526.9 400.8C536.3 410.2 551.5 410.2 560.8 400.8C570.1 391.4 570.2 376.2 560.8 366.9L513.8 319.9L560.8 272.9C570.2 263.5 570.2 248.3 560.8 239C551.4 229.7 536.2 229.6 526.9 239L479.9 286L432.9 239C423.5 229.6 408.3 229.6 399 239z" />
+            </svg>
+        </span>
+    </button>
+    <main id="scrollable-page" class="position-relative min-vh-100 text-box" style="display: none; opacity: 0;">
+        <div class="d-flex flex-column w-100 min-vh-100 ">
             <section id="home" class="position-relative">
                 <div class="d-flex flex-column w-100 min-h-screen-s">
                     <div class="d-flex flex-column min-h-screen-s justify-content-center align-items-center text-2xl"
                         style="opacity: 1;">
                         <!-- Title -->
-                        <p class="fw-semibold fs-4 mb-0" style=" color: #C7A754;">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
+                        <p class="fw-semibold fs-4 mb-5">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
                         <!-- Logo -->
                         <div class="z-3 mt-3">
                             <img alt="logo" loading="lazy" width="204" height="278" decoding="async"
@@ -130,39 +113,38 @@
                         <div class="d-flex justify-content-between align-items-center w-100 px-3 py-3 fw-semibold"
                             style="max-width: 300px; font-size: 1rem;">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <p class="text-xs mb-1 fw-medium" style="color: #C7A754;">កូនប្រុសនាម</p>
+                                <p class="text-xs mb-1 fw-medium">កូនប្រុសនាម</p>
                                 <div class="d-flex flex-column-reverse">
-                                    <p class="mb-0 text-nowrap" style="color: #C7A754;">
+                                    <p class="mb-0 text-nowrap">
                                         សាក់&ZeroWidthSpace; ប្រុសលាប
                                     </p>
                                 </div>
                             </div>
                             <div class="d-flex flex-column align-items-center text-center">
-                                <p class="text-xs mb-1 fw-medium" style="color: #C7A754;">កូនស្រីនាម</p>
+                                <p class="text-xs mb-1 fw-medium">កូនស្រីនាម</p>
                                 <div class="d-flex flex-column-reverse">
-                                    <p class="mb-0 text-nowrap" style="color: #C7A754;">ប៊ុនថុន &ZeroWidthSpace; កញ្ញា
+                                    <p class="mb-0 text-nowrap">ប៊ុនថុន &ZeroWidthSpace; កញ្ញា
                                     </p>
-                                    <p class="mb-0" style="color: #C7A754;"></p>
+                                    <p class="mb-0"></p>
                                 </div>
                             </div>
                         </div>
                         <!-- Event Date -->
                         <div class="text-center">
-                            <p class="text-uppercase fs-6 fw-medium mb-0" style="color: #C7A754;">
+                            <p class="text-uppercase fs-6 fw-medium mb-0">
                                 ដែលនឹងប្រព្រឹត្តទៅនៅ
                             </p>
                             <div class="fw-semibold">
-                                <div class="text-center text-2xl text-uppercase"
-                                    style="font-size: 1.3rem; color: #C7A754;">
+                                <div class="text-center text-2xl text-uppercase" style="font-size: 1.3rem;">
                                     ថ្ងៃសុក្រ ទី០៤&ZeroWidthSpace; ខែមេសា <br>
-                                    <span class="text-uppercase fs-2" style="color: #C7A754;">ឆ្នាំ២០២៥</span>
+                                    <span class="text-uppercase fs-2">ឆ្នាំ២០២៥</span>
                                 </div>
                             </div>
                         </div>
                         <div class="position-absolute w-100  fw-bold d-flex justify-content-center arrow-icon"
-                            style="bottom: 2rem; font-size: 1rem; color: #C7A754; ">
+                            style="bottom: 2rem; font-size: 1rem;">
                             ទាញចុះក្រោម
-                            <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#C7A754"
+                            <svg class="" xmlns=" http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24">
                                 <path d="M12 16.5l-8-8 1.4-1.4L12 13.7l6.6-6.6L20 8.5z" />
                             </svg>
@@ -170,24 +152,23 @@
                     </div>
             </section>
             <section id="gallery1st" class="position-relative">
-                <div class="d-flex flex-column w-100 h-100">
-                    <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100"
-                        style="max-width: 640px; color: #C7A754; margin-top: 100px;">
+                <div class="d-flex flex-column w-100 min-h-screen-s">
+                    <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100" style="max-width: 640px;" margin-top: 100px;>
                         <!-- First Row: Single Large Image -->
                         <div class="rows">
-                            <img src="images/images1.png" alt="Gallery Image 1" class="large-image"
+                            <img src="images/images1.jpeg" alt="Gallery Image 1" class="large-image"
                                 onclick="openLightbox(0)" loading="lazy" />
                         </div>
                         <!-- Second Row: Two Smaller Images -->
                         <div class="rows">
-                            <img src="images/images2.png" alt="Gallery Image 2" class="small-image"
+                            <img src="images/images2.jpeg" alt="Gallery Image 2" class="small-image"
                                 onclick="openLightbox(1)" loading="lazy" />
-                            <img src="images/images3.png" alt="Gallery Image 3" class="small-image"
+                            <img src="images/images3.jpeg" alt="Gallery Image 3" class="small-image"
                                 onclick="openLightbox(2)" loading="lazy" />
                         </div>
                         <!-- Third Row: Single Large Image -->
                         <div class="rows">
-                            <img src="images/images4.png" alt="Gallery Image 4" class="large-image"
+                            <img src="images/images4.jpeg" alt="Gallery Image 4" class="large-image"
                                 onclick="openLightbox(3)" loading="lazy" />
                         </div>
                         <!-- Lightbox Modal -->
@@ -202,7 +183,7 @@
             </section>
             <section id="detail" class="position-relative">
                 <div class="d-flex flex-column w-100 min-vh-100">
-                    <div class="mt-5 mb-5 px-4" style="color: #C7A754;">
+                    <div class="mt-5 mb-5 px-4">
                         <!-- Parents -->
                         <div class="d-flex justify-content-between fw-semibold mx-auto mt-4 mb-4 pop-up-on-scroll"
                             style="max-width: 640px; gap: 0.5rem;">
@@ -230,7 +211,7 @@
                         <div class="position-relative fw-semibold mt-4 pop-up-on-scroll">
                             <!-- Logo -->
                             <div class="text-center">
-                                <img src="images/logo-1.svg" class="img-fluid mx-auto" style="max-width: 10rem;"
+                                <img src="images/logo_v2.svg" class="img-fluid mx-auto" style="max-width: 10rem;"
                                     loading="lazy" alt="Wedding Logo">
                             </div>
                             <!-- Groom & Bride Names -->
@@ -269,13 +250,22 @@
                             <button
                                 class="btn  animation_btn btn-01 position-relative p-0 border-0 d-flex align-items-center justify-content-center animation_btn">
                                 <!-- Background image absolutely positioned -->
-                                <img src="images/button.svg" alt="Calendar Icon"
-                                    class="w-100 h-100 position-absolute top-0 start-0"
-                                    style="z-index: 1; object-fit: cover;">
-
+                                <svg x="0" y="0" viewBox="0 0 194.8 63"
+                                    style="z-index: 1; object-fit: cover; color: #333366;"
+                                    class="w-100 h-100 position-absolute top-0 start-0">
+                                    <path
+                                        d="M194.8,53.9a9.6,9.6,0,0,0-6.5,2.6,9.2,9.2,0,0,0-2.7,6.5H9.2a9.2,9.2,0,0,0-2.7-6.5A9.6,9.6,0,0,0,0,53.9V9.2A9.2,9.2,0,0,0,6.5,6.5,9.2,9.2,0,0,0,9.2,0H185.6a9.2,9.2,0,0,0,2.7,6.5,9.2,9.2,0,0,0,6.5,2.7Z"
+                                        style="fill:#fcfbf4" />
+                                    <path
+                                        d="M12.2,59.5A13.3,13.3,0,0,0,9,54a13,13,0,0,0-5.4-3.2V12.2A13,13,0,0,0,9,9a13,13,0,0,0,3.2-5.4H182.6A13,13,0,0,0,185.8,9a13,13,0,0,0,5.4,3.2V50.8a13,13,0,0,0-5.4,3.2,13.3,13.3,0,0,0-3.2,5.5Z"
+                                        style="fill:#414c5e" />
+                                    <path
+                                        d="M12.8,58.6a14.1,14.1,0,0,0-3.2-5.2,15.6,15.6,0,0,0-5.2-3.2V12.8A14.1,14.1,0,0,0,9.6,9.6a14.1,14.1,0,0,0,3.2-5.2H182a14.1,14.1,0,0,0,3.2,5.2,14.1,14.1,0,0,0,5.2,3.2V50.2a15.6,15.6,0,0,0-5.2,3.2,14.1,14.1,0,0,0-3.2,5.2Z"
+                                        style="fill:#fcfbf4" />
+                                </svg>
                                 <!-- Text centered on top -->
-                                <span class="position-relative text-uppercase fw-semibold"
-                                    style="padding-top: 4px; padding-bottom: 4px;line-height: 1.2;font-size: 0.9rem;color: #C7A754">
+                                <span class="position-relative text-uppercase fw-semibold z-3"
+                                    style="padding-top: 4px; padding-bottom: 4px;line-height: 1.2;font-size: 0.9rem;">
                                     កត់ទុកក្នុងប្រតិទិន
                                 </span>
                             </button>
@@ -287,93 +277,90 @@
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="px-4 mt-5">
                         <!-- Section Title -->
-                        <div class="position-relative text-center fw-semibold py-4"
-                            style="color: #C7A754; font-size: 1.5rem;">
+                        <div class="position-relative text-center fw-semibold py-4">
                             កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍
                         </div>
-                        <div class="px-4 text-center fw-medium" style="font-size: 1rem; color: #C7A754;">
-                            <!-- Morning Agenda -->
-                            <div>
-                                <h2 class="fw-semibold mb-4 slide-in-left" style="font-size: 1.25rem;">
-                                    កម្មវិធីពេលព្រឹក
-                                </h2>
+                        <div class="px-4 text-center fw-medium fs-7">
+                            <div class="timeline">
                                 <!-- Event 1 -->
-                                <div class="mb-3 slide-in-right">
-                                    <div class="position-relative d-flex flex-column align-items-center">
-                                        <img src="images/icon-1-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
+                                <div class="row timeline-item p-0 ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">
+                                        <div class="">
+                                            ពិធីហែជំនូន
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ទទួលផ្លាស្លា ចូលរោងជ័យ
+                                            អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក
+                                        </div>
                                     </div>
-                                    <p class="my-1 " style="font-size: 1.25rem;">៧:០០ នាទីព្រឹក
-                                    </p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីហែជំនូន ទទួលផ្លាស្លា ចូលរោងជ័យ <br>
-                                        អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក</p>
+                                    <div class="col-2"></div>
+                                    <div class="col-5  text-start time p-0 slide-in-right">៧:០០ នាទីព្រឹក</div>
                                 </div>
                                 <!-- Event 2 -->
-                                <div class="mb-3 slide-in-left">
-                                    <div>
-                                        <img src="images/ring-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
-                                    </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">៨:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">ពិធីបំពាក់ចិញ្ជៀន</p>
+                                <div class="row timeline-item ">
+                                    <div class="col-5  text-end event p-0 slide-in-left">៨:០០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5  text-start time p-0 slide-in-right">ពិធីបំពាក់ចិញ្ជៀន</div>
                                 </div>
                                 <!-- Event 3 -->
-                                <div class="mb-3 slide-in-right">
-                                    <div>
-                                        <img src="images/monk1-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
+                                <div class="row timeline-item ">
+                                    <div class="col-5  text-end event p-0 slide-in-left">
+                                        <div class="">
+                                            ពិធីសូត្រមន្ត
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ចម្រើនព្រះបរិត្ត
+                                        </div>
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">៩:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីសូត្រមន្ត ចម្រើនព្រះបរិត្ត</p>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">៩:០០ នាទីព្រឹក</div>
                                 </div>
                                 <!-- Event 4 -->
-                                <div class="mb-3 slide-in-left">
-                                    <div>
-                                        <img src="images/sissor-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
-                                    </div>
-                                    <p class="my-1" style="font-size: 1.25rem;"> ១០:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីកាត់សក់បង្កក់សិរី</p>
+                                <div class="row timeline-item ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">១០:០០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5  text-start time p-0 slide-in-right">
+                                        ពិធីកាត់សក់បង្កក់សិរី</div>
                                 </div>
                                 <!-- Event 5 -->
-                                <div class="mb-3 slide-in-right">
-                                    <div>
-                                        <img src="images/h&w-01.svg" alt=""
-                                            style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
+                                <div class="row timeline-item ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">១១:០០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">
+                                        <div class="">
+                                            ពិធីហែជំនូន
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ទទួលផ្លាស្លា ចូលរោងជ័យ
+                                            អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក
+                                        </div>
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;"> ១១:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីសំពះផ្ទឹម បង្វិលពពិល គួចចំណងដៃ <br> បាចផ្កាស្លា ព្រះថោងនាងនាគ
-                                    </p>
                                 </div>
-                                <!-- Event 5 -->
-                                <div class="mb-5 slide-in-left">
-                                    <div>
-                                        <img src="images/lunch-01-01.svg" alt=""
-                                            style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
+                                <!-- Event 6 -->
+                                <div class="row timeline-item ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">១១:៣០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">
+                                        <div class="">
+                                            អញ្ជើញ
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់
+                                        </div>
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">១១:៣០ នាទីព្រឹក
-                                    </p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់</p>
                                 </div>
-                            </div>
-                            <!-- Evening Agenda -->
-                            <div>
-                                <h2 class="fw-semibold my-4 slide-in-right" style="font-size: 1.25rem;">
-                                    កម្មវិធីពេលល្ងាច</h2>
-                                <!-- Evening Event -->
-                                <div class="mb-4 slide-in-left">
-                                    <div class="position-relative d-flex flex-column align-items-center">
-                                        <img src="images/dinner-01.svg" alt=""
-                                            style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
+                                <!-- Event 7 -->
+                                <div class="row timeline-item ">
+                                    <div class="col-5  text-end event p-0 slide-in-left">
+                                        <div class="">
+                                            ពិធីបដិសញ្ឋារកិច្ច
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ភ្ញៀវកិត្តិយសពិសារភោជនារអាហារ
+                                        </div>
                                     </div>
-                                    <p class="my-2" style="font-size: 1.25rem;">១៧:០០ នាទីល្ងាច
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីបដិសញ្ឋារកិច្ចភ្ញៀវកិត្តិយសពិសារភោជនារអាហារ</p>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">១៧:០០ នាទីល្ងាច</div>
                                 </div>
                             </div>
                         </div>
@@ -382,43 +369,40 @@
             </section>
             <section id="gallery" class="position-relative">
                 <div class="d-flex flex-column w-100 h-100">
-
-
-                    <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100"
-                        style="max-width: 640px; color: #C7A754; margin-top: 100px;">
+                    <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100" style="max-width: 640px;" margin-top: 100px;>
                         <div class="images">
                             <!-- Image Gallery -->
                             <!-- First Row: Single Large Image -->
                             <div class="rows">
-                                <img src="images/images5.png" alt="Gallery Image 5" class="large-image"
+                                <img src="images/images5.jpeg" alt="Gallery Image 5" class="large-image"
                                     onclick="openLightbox(4)" loading="lazy" />
                             </div>
                             <!-- Second Row: Two Smaller Images -->
                             <div class="rows">
-                                <img src="images/images6.png" alt="Gallery Image 6" class="small-image"
+                                <img src="images/images6.jpeg" alt="Gallery Image 6" class="small-image"
                                     onclick="openLightbox(5)" loading="lazy" />
-                                <img src="images/images7.png" alt="Gallery Image 7" class="small-image"
+                                <img src="images/images7.jpeg" alt="Gallery Image 7" class="small-image"
                                     onclick="openLightbox(6)" loading="lazy" />
                             </div>
                             <!-- Third Row: Single Large Image -->
                             <div class="rows">
-                                <img src="images/images8.png" alt="Gallery Image 8" class="large-image"
+                                <img src="images/images8.jpeg" alt="Gallery Image 8" class="large-image"
                                     onclick="openLightbox(7)" loading="lazy" />
                             </div>
                             <div class="rows">
-                                <img src="images/images9.png" alt="Gallery Image 5" class="large-image"
+                                <img src="images/images9.jpeg" alt="Gallery Image 5" class="large-image"
                                     onclick="openLightbox(8)" loading="lazy" />
                             </div>
                             <!-- Second Row: Two Smaller Images -->
                             <div class="rows">
-                                <img src="images/images10.png" alt="Gallery Image 6" class="small-image"
+                                <img src="images/images10.jpeg" alt="Gallery Image 6" class="small-image"
                                     onclick="openLightbox(9)" loading="lazy" />
-                                <img src="images/images11.png" alt="Gallery Image 7" class="small-image"
+                                <img src="images/images11.jpeg" alt="Gallery Image 7" class="small-image"
                                     onclick="openLightbox(10)" loading="lazy" />
                             </div>
                             <!-- Third Row: Single Large Image -->
                             <div class="rows">
-                                <img src="images/images12.png" alt="Gallery Image 8" class="large-image"
+                                <img src="images/images12.jpeg" alt="Gallery Image 8" class="large-image"
                                     onclick="openLightbox(11)" loading="lazy" />
                             </div>
                         </div>
@@ -437,12 +421,12 @@
                     <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
 
                         <!-- Title -->
-                        <div class="text-center fw-semibold " style="color: #C7A754; font-size: 1.5rem;">
+                        <div class="text-center fw-semibold  font-size: 1.5rem;">
                             ទីតាំង
                         </div>
 
                         <!-- Subtitle -->
-                        <div class="text-center p-3" style="color: #C7A754; font-size: 1.25rem;">
+                        <div class="text-center p-3 font-size: 1.25rem;">
                             ភូមិព្រែកស្វាយ ឃុំឈើទាល ស្រុកកៀនស្វាយ ខេត្តកណ្ដាល
                         </div>
                         <!-- Map Image -->
@@ -454,13 +438,23 @@
                         <a target="_blank" href="https://maps.app.goo.gl/LXDL4t21vvFHLXQMA"
                             class="btn btn-01 position-relative p-0 mt-5 border-0 d-flex align-items-center justify-content-center animation_btn ">
                             <!-- Background image absolutely positioned -->
-                            <img src="images/button.svg" alt="Calendar Icon"
-                                class="w-100 h-100 position-absolute top-0 start-0"
-                                style="z-index: 1; object-fit: cover;">
+                            <svg x="0" y="0" viewBox="0 0 194.8 63"
+                                style="z-index: 1; object-fit: cover; color: #333366;"
+                                class="w-100 h-100 position-absolute top-0 start-0">
+                                <path
+                                    d="M194.8,53.9a9.6,9.6,0,0,0-6.5,2.6,9.2,9.2,0,0,0-2.7,6.5H9.2a9.2,9.2,0,0,0-2.7-6.5A9.6,9.6,0,0,0,0,53.9V9.2A9.2,9.2,0,0,0,6.5,6.5,9.2,9.2,0,0,0,9.2,0H185.6a9.2,9.2,0,0,0,2.7,6.5,9.2,9.2,0,0,0,6.5,2.7Z"
+                                    style="fill:#fcfbf4" />
+                                <path
+                                    d="M12.2,59.5A13.3,13.3,0,0,0,9,54a13,13,0,0,0-5.4-3.2V12.2A13,13,0,0,0,9,9a13,13,0,0,0,3.2-5.4H182.6A13,13,0,0,0,185.8,9a13,13,0,0,0,5.4,3.2V50.8a13,13,0,0,0-5.4,3.2,13.3,13.3,0,0,0-3.2,5.5Z"
+                                    style="fill:#414c5e" />
+                                <path
+                                    d="M12.8,58.6a14.1,14.1,0,0,0-3.2-5.2,15.6,15.6,0,0,0-5.2-3.2V12.8A14.1,14.1,0,0,0,9.6,9.6a14.1,14.1,0,0,0,3.2-5.2H182a14.1,14.1,0,0,0,3.2,5.2,14.1,14.1,0,0,0,5.2,3.2V50.2a15.6,15.6,0,0,0-5.2,3.2,14.1,14.1,0,0,0-3.2,5.2Z"
+                                    style="fill:#fcfbf4" />
+                            </svg>
 
                             <!-- Text centered on top -->
-                            <span class="position-relative text-uppercase fw-semibold "
-                                style="padding-top: 4px; padding-bottom: 4px;line-height: 1.2;font-size: 0.9rem;color: #C7A754">
+                            <span class="position-relative text-uppercase fw-semibold z-3"
+                                style="padding-top: 4px; padding-bottom: 4px;line-height: 1.2;font-size: 0.9rem;">
                                 បើកផែនទី
                             </span>
                         </a>
@@ -470,18 +464,18 @@
             <section id="wish" class="position-relative">
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="d-flex flex-column justify-content-center align-items-center min-vh-100  ">
-                        <div class="text-center fw-semibold " style="color: #C7A754; font-size: 1.5rem;">
+                        <div class="text-center fw-semibold  font-size: 1.5rem;">
                             ពាក្យជូនពរ
                         </div>
-                        <div class="text-center p-3" style="color: #C7A754; font-size: 1.25rem;">
+                        <div class="text-center p-3 font-size: 1.25rem;">
                             សូមផ្ញើជូននូវពរជ័យ និងពាក្យពេចន៍ល្អៗរបស់អ្នកសម្រាប់គូស្វាមីភរិយាថ្មីថ្មោង
                         </div>
                         <div class="mt-3 w-100 d-flex justify-content-center text-center">
                             <form class="d-flex flex-column" action="https://formspree.io/f/xvgqkkev" method="POST"
                                 style="width: 250px; height: 120px;">
                                 <label class="w-100 h-100">
-                                    <textarea class="form-control w-100 h-100" name="message"
-                                        style="    border: solid #C7A754; background: transparent;"></textarea>
+                                    <textarea class="form-control w-100 h-100" name="message" background:
+                                        transparent;></textarea>
                                 </label>
                                 <!-- your other form fields go here -->
                                 <button type="submit" class="custom-btn ">ផ្ញើរសារ</button>
@@ -492,18 +486,18 @@
             </section>
             <section id="aboutus" class="position-relative">
                 <div class="d-flex flex-column w-100 h-100">
-                    <div class="d-flex flex-column justify-content-center align-items-center mt-5 vh-100 text-center text-warning fw-light"
-                        style="color: #C7A754;">
+                    <div
+                        class="d-flex flex-column justify-content-center align-items-center mt-5 vh-100 text-center text-warning fw-light">
                         <!-- Logo -->
-                        <img src="images/invitely_logo-01.svg" width="200" height="200" alt="Ananisai Logo"
+                        <img src=" images/invitely_logo-01.svg" width="200" height="200" alt="invitely logo"
                             class="img-fluid mb-4" loading="lazy" decoding="async">
                         <!-- Text -->
-                        <p class="px-3 px-md-5" style="color: #C7A754;">
+                        <p class="px-3 px-md-5" style="color: #333366;">
                             តើលោកអ្នកចាប់អារម្មណ៍នឹងប្រើប្រាស់សេវាកម្មរបស់ពួកយើងសម្រាប់កម្មវិធីរបស់លោកអ្នកដែរឬទេ?
                         </p>
-                        <p class="m-0" style="color: #C7A754;">ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
+                        <p class="m-0" style="color: #333366;">ទាក់ទងមកកាន់ពួកយើងឥឡូវនេះ</p>
                         <!-- Contact Info -->
-                        <div class="d-flex flex-column gap-2" style="color: #C7A754;">
+                        <div class="d-flex flex-column gap-2" style="color: #333366;">
                             <a href="tel:0966079486" class="text-decoration-none text-reset">លេខទូរស័ព្ទ: 096 607
                                 9486</a>
                             <a href="lengmr2112@gmail.com" class="text-decoration-none text-reset">អុីមែល:
@@ -514,7 +508,7 @@
                             <!-- Instagram -->
                             <a href="https://www.facebook.com/" target="_blank"
                                 class="d-flex flex-column align-items-center text-decoration-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#333366"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
@@ -523,7 +517,7 @@
                             <!-- Telegram -->
                             <a href="https://t.me/snnleng" target="_blank"
                                 class="d-flex flex-column align-items-center text-decoration-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#333366"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
@@ -531,7 +525,7 @@
                             </a>
                             <a href="http://instagram.com/" target="_blank"
                                 class="d-flex flex-column align-items-center text-decoration-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#C7A754"
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#333366"
                                     viewBox="0 0 16 16">
                                     <path
                                         d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
@@ -543,7 +537,7 @@
             </section>
         </div>
     </main>
-    <script src="script.js"></script>
 </body>
 
 </html>
+<script src="script.js"></script>
