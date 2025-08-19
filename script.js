@@ -59,18 +59,18 @@ startButton.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const images = [
-    "images/images1.png",
-    "images/images2.png",
-    "images/images3.png",
-    "images/images4.png",
-    "images/images5.png",
-    "images/images6.png",
-    "images/images7.png",
-    "images/images8.png",
-    "images/images9.png",
-    "images/images10.png",
-    "images/images11.png",
-    "images/images12.png",
+    "images/images1.jpeg",
+    "images/images2.jpeg",
+    "images/images3.jpeg",
+    "images/images4.jpeg",
+    "images/images5.jpeg",
+    "images/images6.jpeg",
+    "images/images7.jpeg",
+    "images/images8.jpeg",
+    "images/images9.jpeg",
+    "images/images10.jpeg",
+    "images/images11.jpeg",
+    "images/images12.jpeg",
   ];
 
   let currentIndex = 0;

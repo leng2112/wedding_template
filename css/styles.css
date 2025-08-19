@@ -1,21 +1,28 @@
-
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Kantumruy Pro", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
-  max-width: 420px;   /* lock site to mobile width */
-  margin: 0 auto; 
+  max-width: 420px;
+  /* lock site to mobile width */
+  margin: 0 auto;
 }
 
 .h-screen-l {
-    height: 100lvh;
+  height: 100lvh;
 }
+
 .w-full {
-    width: 100%;
+  width: 100%;
 }
+
+.fs-7 {
+  font-size: 0.9rem;
+}
+
 .resizable-box {
   width: 80%;
   height: 50px;
@@ -31,6 +38,7 @@ body {
   margin: 0;
   color: #a57c52;
 }
+
 #popup-page,
 #scrollable-page {
   opacity: 0;
@@ -40,7 +48,8 @@ body {
 
 #popup-page {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: white;
@@ -72,7 +81,7 @@ body {
 
 
 text {
-  fill:  #C7A754;
+  fill: #C7A754;
   font-size: 1.5rem;
 }
 
@@ -115,7 +124,6 @@ text {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
@@ -170,6 +178,7 @@ text {
 .next-btn:hover {
   transform: scale(1.05);
 }
+
 .hidden {
   display: none;
 }
@@ -181,19 +190,26 @@ text {
 
 /* Bouncing animation */
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(6px);
   }
 }
+
 .z-3 {
   z-index: 50;
 }
-.min-h-screen-s, .min-h-svh {
-    min-height: 100svh;
+
+.min-h-screen-s,
+.min-h-svh {
+  min-height: 100svh;
 }
+
 .arrow-icon {
   animation: bounce 1.2s infinite;
   transition: opacity 0.3s ease-in-out;
@@ -201,7 +217,8 @@ text {
 
 .slide-in {
   opacity: 0;
-  transform: translateY(-80px); /* Slide from top */
+  transform: translateY(-80px);
+  /* Slide from top */
   transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease;
 
 }
@@ -210,6 +227,7 @@ text {
   opacity: 1;
   transform: translateY(0);
 }
+
 .animation_btn {
   transition: transform 0.3s ease-in-out;
   background-color: transparent;
@@ -235,7 +253,8 @@ text {
 }
 
 /* Common hidden state */
-.slide-in-left, .slide-in-right {
+.slide-in-left,
+.slide-in-right {
   opacity: 0;
   transition: transform 1s ease-out, opacity 1s ease-out;
   will-change: transform, opacity;
@@ -249,11 +268,13 @@ text {
 .slide-in-right {
   transform: translateX(60px);
 }
+
 /* Final visible state */
 .slide-in-visible {
   transform: translateX(0) translateY(0);
   opacity: 1;
 }
+
 .pop-up-on-scroll {
   opacity: 0;
   transform: scale(0.8);
@@ -265,6 +286,7 @@ text {
   opacity: 1;
   transform: scale(1);
 }
+
 .custom-btn {
   border: 1.5px solid #333366;
   color: #333366;
@@ -277,9 +299,10 @@ text {
 }
 
 .custom-btn:hover {
-  background-color:#333366;
+  background-color: #333366;
   color: white;
 }
+
 .btn-01 {
   width: 220px;
   height: 40px;
@@ -287,7 +310,7 @@ text {
 }
 
 .btn-audio {
- width: 50px;
+  width: 50px;
   height: 50px;
   border: 2px solid #333366;
   background-color: white;
@@ -299,19 +322,61 @@ text {
 
 @media (max-width: 768px) {
   .hero {
-    height: 70vh; /* crop 30% on small screens */
+    height: 70vh;
+    /* crop 30% on small screens */
   }
 }
+
 .text-box {
   background-color: rgba(252, 251, 244, 0.71);
   color: #333366;
   margin: 0 30px;
   opacity: 0;
-  transform: translateY(30px); /* slide in effect */
-  transition: opacity 0.9s  ease, transform 0.9s ease;
+  transform: translateY(30px);
+  /* slide in effect */
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .text-box.show {
   opacity: 1;
   transform: translateX(0);
+}
+
+.event-icon {
+  color: #333366;
+  width: 4.5rem;
+  height: 4.5rem;
+  top: -1.5rem
+}
+
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: #d19b4c;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin: 20px 0;
+}
+
+.event {
+  color: #9c4f38;
+
+}
+
+.time {
+  color: #333366;
+
 }

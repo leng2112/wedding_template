@@ -26,10 +26,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <!-- Bootstrap JS (use CDN or local file) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Dynamic OG title using JavaScript -->
     <script>
@@ -80,14 +76,16 @@
             </div>
         </div>
     </header>
-    <div id="popup-page"
-        style="display: none; opacity: 0; justify-content: center; align-items: center; background: rgba(0,0,0,0.8); position: fixed; top:0; left:0; width:100%; height:100%;">
+    <!-- Popup Page -->
+    <div id="popup-page" class="justify-content-center align-items-center position-fixed w-100 h-100"
+        style="display: none; opacity: 0; background: rgba(0,0,0,0.8); top:0; left:0; ">
         <video id="popup-video" playsinline webkit-playsinline muted preload="auto"
             style="max-width:100%; max-height:100%;">
             <source src="images/open_clip.mp4" type="video/mp4">
-
         </video>
     </div>
+
+
     <button id="audioToggle" class="d-flex align-items-center justify-content-center rounded-circle btn-audio"
         data-bs-toggle="tooltip" data-bs-placement="left">
         <span id="audioIcon">
@@ -105,7 +103,7 @@
                     <div class="d-flex flex-column min-h-screen-s justify-content-center align-items-center text-2xl"
                         style="opacity: 1;">
                         <!-- Title -->
-                        <p class="fw-semibold fs-4 mb-0">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
+                        <p class="fw-semibold fs-4 mb-5">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
                         <!-- Logo -->
                         <div class="z-3 mt-3">
                             <img alt="logo" loading="lazy" width="204" height="278" decoding="async"
@@ -158,19 +156,19 @@
                     <div class="images px-4 mt-5 mb-5 mx-auto w-100 h-100" style="max-width: 640px;" margin-top: 100px;>
                         <!-- First Row: Single Large Image -->
                         <div class="rows">
-                            <img src="images/images1.png" alt="Gallery Image 1" class="large-image"
+                            <img src="images/images1.jpeg" alt="Gallery Image 1" class="large-image"
                                 onclick="openLightbox(0)" loading="lazy" />
                         </div>
                         <!-- Second Row: Two Smaller Images -->
                         <div class="rows">
-                            <img src="images/images2.png" alt="Gallery Image 2" class="small-image"
+                            <img src="images/images2.jpeg" alt="Gallery Image 2" class="small-image"
                                 onclick="openLightbox(1)" loading="lazy" />
-                            <img src="images/images3.png" alt="Gallery Image 3" class="small-image"
+                            <img src="images/images3.jpeg" alt="Gallery Image 3" class="small-image"
                                 onclick="openLightbox(2)" loading="lazy" />
                         </div>
                         <!-- Third Row: Single Large Image -->
                         <div class="rows">
-                            <img src="images/images4.png" alt="Gallery Image 4" class="large-image"
+                            <img src="images/images4.jpeg" alt="Gallery Image 4" class="large-image"
                                 onclick="openLightbox(3)" loading="lazy" />
                         </div>
                         <!-- Lightbox Modal -->
@@ -279,97 +277,92 @@
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="px-4 mt-5">
                         <!-- Section Title -->
-                        <div class="position-relative text-center fw-semibold py-4" font-size: 1.5rem;">
+                        <div class="position-relative text-center fw-semibold py-4">
                             កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍
                         </div>
-                        <div class="px-4 text-center fw-medium" style="font-size: 1rem;">
-                            <!-- Morning Agenda -->
-                            <div>
-                                <h2 class="fw-semibold mb-4 slide-in-left" style="font-size: 1.25rem;">
-                                    កម្មវិធីពេលព្រឹក
-                                </h2>
+                        <div class="px-4 text-center fw-medium fs-7">
+                            <div class="timeline">
                                 <!-- Event 1 -->
-                                <div class="mb-3 slide-in-right">
-                                    <div class="position-relative d-flex flex-column align-items-center">
-                                        <img src="images/icon-1-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
+                                <div class="row timeline-item p-0 ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">
+                                        <div class="">
+                                            ពិធីហែជំនូន
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ទទួលផ្លាស្លា ចូលរោងជ័យ
+                                            អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក
+                                        </div>
                                     </div>
-                                    <p class="my-1 " style="font-size: 1.25rem;">៧:០០ នាទីព្រឹក
-                                    </p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីហែជំនូន ទទួលផ្លាស្លា ចូលរោងជ័យ <br>
-                                        អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក</p>
+                                    <div class="col-2"></div>
+                                    <div class="col-5  text-start time p-0 slide-in-right">៧:០០ នាទីព្រឹក</div>
                                 </div>
                                 <!-- Event 2 -->
-                                <div class="mb-3 slide-in-left">
-                                    <div>
-                                        <img src="images/ring-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem; color: blue;">
-                                    </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">៨:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">ពិធីបំពាក់ចិញ្ជៀន</p>
+                                <div class="row timeline-item ">
+                                    <div class="col-5  text-end event p-0 slide-in-left">៨:០០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5  text-start time p-0 slide-in-right">ពិធីបំពាក់ចិញ្ជៀន</div>
                                 </div>
                                 <!-- Event 3 -->
-                                <div class="mb-3 slide-in-right">
-                                    <div>
-                                        <img src="images/monk1-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
+                                <div class="row timeline-item ">
+                                    <div class="col-5  text-end event p-0 slide-in-left">
+                                        <div class="">
+                                            ពិធីសូត្រមន្ត
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ចម្រើនព្រះបរិត្ត
+                                        </div>
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">៩:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីសូត្រមន្ត ចម្រើនព្រះបរិត្ត</p>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">៩:០០ នាទីព្រឹក</div>
                                 </div>
                                 <!-- Event 4 -->
-                                <div class="mb-3 slide-in-left">
-                                    <div>
-                                        <img src="images/sissor-01.svg" alt=""
-                                            style="width: 4rem; height: 4rem; top: -1.5rem;">
-                                    </div>
-                                    <p class="my-1" style="font-size: 1.25rem;"> ១០:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីកាត់សក់បង្កក់សិរី</p>
+                                <div class="row timeline-item ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">១០:០០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5  text-start time p-0 slide-in-right">
+                                        ពិធីកាត់សក់បង្កក់សិរី</div>
                                 </div>
                                 <!-- Event 5 -->
-                                <div class="mb-3 slide-in-right">
-                                    <div>
-                                        <img src="images/h&w-01.svg" alt=""
-                                            style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
+                                <div class="row timeline-item ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">១១:០០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">
+                                        <div class="">
+                                            ពិធីហែជំនូន
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ទទួលផ្លាស្លា ចូលរោងជ័យ
+                                            អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក
+                                        </div>
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;"> ១១:០០ នាទីព្រឹក</p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីសំពះផ្ទឹម បង្វិលពពិល គួចចំណងដៃ <br> បាចផ្កាស្លា ព្រះថោងនាងនាគ
-                                    </p>
                                 </div>
-                                <!-- Event 5 -->
-                                <div class="mb-5 slide-in-left">
-                                    <div>
-                                        <img src="images/lunch-01-01.svg" alt=""
-                                            style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
+                                <!-- Event 6 -->
+                                <div class="row timeline-item ">
+                                    <div class="col-5 text-end event p-0 slide-in-left">១១:៣០ នាទីព្រឹក</div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">
+                                        <div class="">
+                                            អញ្ជើញ
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់
+                                        </div>
                                     </div>
-                                    <p class="my-1" style="font-size: 1.25rem;">១១:៣០ នាទីព្រឹក
-                                    </p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់</p>
+                                </div>
+                                <!-- Event 7 -->
+                                <div class="row timeline-item ">
+                                    <div class="col-5  text-end event p-0 slide-in-left">
+                                        <div class="">
+                                            ពិធីបដិសញ្ឋារកិច្ច
+                                        </div>
+                                        <div style="font-size: 0.7rem ;">
+                                            ភ្ញៀវកិត្តិយសពិសារភោជនារអាហារ
+                                        </div>
+                                    </div>
+                                    <div class="col-2"></div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">១៧:០០ នាទីល្ងាច</div>
                                 </div>
                             </div>
-                            <!-- Evening Agenda -->
-                            <div>
-                                <h2 class="fw-semibold my-4 slide-in-right" style="font-size: 1.25rem;">
-                                    កម្មវិធីពេលល្ងាច</h2>
-
-                                <!-- Evening Event -->
-                                <div class="mb-4 slide-in-left">
-                                    <div class="position-relative d-flex flex-column align-items-center">
-                                        <img src="images/dinner-01.svg" alt=""
-                                            style="width: 4.5rem; height: 4.5rem; top: -1.5rem;">
-                                    </div>
-                                    <p class="my-2" style="font-size: 1.25rem;">១៧:០០ នាទីល្ងាច
-                                    </p>
-                                    <p class="text-uppercase" style="font-size: 1rem;">
-                                        ពិធីបដិសញ្ឋារកិច្ចភ្ញៀវកិត្តិយសពិសារភោជនារអាហារ</p>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -381,35 +374,35 @@
                             <!-- Image Gallery -->
                             <!-- First Row: Single Large Image -->
                             <div class="rows">
-                                <img src="images/images5.png" alt="Gallery Image 5" class="large-image"
+                                <img src="images/images5.jpeg" alt="Gallery Image 5" class="large-image"
                                     onclick="openLightbox(4)" loading="lazy" />
                             </div>
                             <!-- Second Row: Two Smaller Images -->
                             <div class="rows">
-                                <img src="images/images6.png" alt="Gallery Image 6" class="small-image"
+                                <img src="images/images6.jpeg" alt="Gallery Image 6" class="small-image"
                                     onclick="openLightbox(5)" loading="lazy" />
-                                <img src="images/images7.png" alt="Gallery Image 7" class="small-image"
+                                <img src="images/images7.jpeg" alt="Gallery Image 7" class="small-image"
                                     onclick="openLightbox(6)" loading="lazy" />
                             </div>
                             <!-- Third Row: Single Large Image -->
                             <div class="rows">
-                                <img src="images/images8.png" alt="Gallery Image 8" class="large-image"
+                                <img src="images/images8.jpeg" alt="Gallery Image 8" class="large-image"
                                     onclick="openLightbox(7)" loading="lazy" />
                             </div>
                             <div class="rows">
-                                <img src="images/images9.png" alt="Gallery Image 5" class="large-image"
+                                <img src="images/images9.jpeg" alt="Gallery Image 5" class="large-image"
                                     onclick="openLightbox(8)" loading="lazy" />
                             </div>
                             <!-- Second Row: Two Smaller Images -->
                             <div class="rows">
-                                <img src="images/images10.png" alt="Gallery Image 6" class="small-image"
+                                <img src="images/images10.jpeg" alt="Gallery Image 6" class="small-image"
                                     onclick="openLightbox(9)" loading="lazy" />
-                                <img src="images/images11.png" alt="Gallery Image 7" class="small-image"
+                                <img src="images/images11.jpeg" alt="Gallery Image 7" class="small-image"
                                     onclick="openLightbox(10)" loading="lazy" />
                             </div>
                             <!-- Third Row: Single Large Image -->
                             <div class="rows">
-                                <img src="images/images12.png" alt="Gallery Image 8" class="large-image"
+                                <img src="images/images12.jpeg" alt="Gallery Image 8" class="large-image"
                                     onclick="openLightbox(11)" loading="lazy" />
                             </div>
                         </div>
