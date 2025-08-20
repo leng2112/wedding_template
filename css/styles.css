@@ -78,15 +78,10 @@ body {
   color: white;
 }
 
-
-
 text {
   fill: #C7A754;
   font-size: 1.5rem;
 }
-
-
-
 
 .rows {
   display: flex;
@@ -386,4 +381,47 @@ text {
 .time {
   color: #333366;
 
+}
+
+.hand {
+  width: 40px;
+  position: absolute;
+  top: 78%;
+  left: 14%;
+  transform: translate(80px, -10px);
+  cursor: pointer;
+  animation: handPress 1.5s infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Smoother click animation */
+@keyframes handPress {
+  0% {
+    transform: translate(80px, -10px) scale(1);
+  }
+
+  25% {
+    transform: translate(80px, -6px) scale(0.97);
+  }
+
+  /* going down */
+  40% {
+    transform: translate(80px, -4px) scale(0.95);
+  }
+
+  /* press deepest */
+  60% {
+    transform: translate(80px, -6px) scale(0.97);
+  }
+
+  /* easing up */
+  75% {
+    transform: translate(80px, -8px) scale(0.99);
+  }
+
+  /* almost back */
+  100% {
+    transform: translate(80px, -10px) scale(1);
+  }
+
+  /* reset */
 }
