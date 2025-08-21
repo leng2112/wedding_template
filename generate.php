@@ -1,15 +1,24 @@
+<?php
+// guest list
+$guests = ["Siengly", "Meng", "Pheap", "Somphors"];
+
+foreach ($guests as $guest) {
+    // clean guest name for file name
+    $slug = strtolower(preg_replace('/\s+/', '-', $guest));
+    
+    // HTML template
+    $html = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Mary, you’re invited!</title>
-  <meta property="og:title" content="Mary, you’re invited to Leab & Nha's Wedding 💍">
+  <title>សូមគោរពអញ្ជើញ,$guest</title>
+  <meta property="og:title" content="សិរីមង្គលអាពាណ៍ពិពាហ៍, សូមគោរពអញ្ជើញ : $guest, ">
   <meta property="og:description" content="Save the date & celebrate with us!">
   <meta property="og:image" content="https://leabnhawedding.com/images/og-image.png">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://leabnhawedding.com/invite/mary.html">
-  <title>Wedding Invitation</title>
+  <meta property="og:url" content="https://leabnhawedding.com/invite/$slug.html">
+
   <!-- Bootstrap CSS first -->
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <!-- Your custom CSS after -->
@@ -518,3 +527,9 @@
 <script src="../script.js"></script>
 
 </html>
+HTML;
+
+    // save file
+    file_put_contents("invite/$slug.html", $html);
+    echo "Generated invite/$slug.html for $guest\n";
+}
