@@ -54,69 +54,87 @@ startButton.addEventListener('click', () => {
   popupVideo.addEventListener('ended', handleVideoEnd);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const galleries = {
-    gallery1st: [
-      "images/images1.jpeg",
-      "images/images2.jpeg",
-      "images/images3.jpeg",
-      "images/images4.jpeg",
-    ],
-    gallery2nd: [
-      "images/images5.jpeg",
-      "images/images6.jpeg",
-      "images/images7.jpeg",
-      "images/images8.jpeg",
-      "images/images9.jpeg",
-      "images/images10.jpeg",
-      "images/images11.jpeg",
-      "images/images12.jpeg",
-    ],
-  };
+    // Image Array
+    const images = [
+        "images/images1.webp",
+        "images/images2.webp",
+        "images/images3.webp",
+        "images/images4.webp",
+        "images/images5.webp",
+        "images/images6.webp",
+        "images/images7.webp",
+        "images/images8.webp",
+        "images/images9.webp",
+        "images/images10.webp",
+        "images/images11.webp",
+        "images/images12.webp",
+    ];
 
-  let currentGallery = null;
-  let currentIndex = 0;
+    let currentIndex = 0;
 
-  // Open Lightbox
-  window.openLightbox = function (galleryId, index) {
-    currentGallery = galleryId;
-    currentIndex = index;
+    // Open Lightbox
+    function openLightbox(index) {
+        currentIndex = index;
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
 
-    const section = document.getElementById(galleryId);
-    const lightbox = section.querySelector(".lightbox");
-    const lightboxImage = section.querySelector(".lightbox-image"); // Use class, not id
+        lightboxImage.src = images[currentIndex];
+        lightbox.classList.remove("hidden");
 
-    if (!lightboxImage) {
-      console.error("Lightbox image not found in section:", galleryId);
-      return;
+        // Stop background scroll
+        document.body.style.overflow = "hidden";
+
+        // Close lightbox if click outside image
+        lightbox.addEventListener("click", function (e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard support
+        document.addEventListener("keydown", handleKeyDown);
     }
 
-    lightboxImage.src = galleries[galleryId][currentIndex];
-    lightbox.classList.remove("hidden");
-  };
+    // Close Lightbox
+    function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.classList.add("hidden");
 
-  // Change Image (Next/Prev)
-  window.changeImage = function (galleryId, step) {
-    const gallery = galleries[galleryId];
-    currentIndex = (currentIndex + step + gallery.length) % gallery.length;
-    
-    const section = document.getElementById(galleryId);
-    const lightboxImage = section.querySelector(".lightbox-image");
+        // Restore scroll
+        document.body.style.overflow = "";
 
-    if (lightboxImage) {
-      lightboxImage.src = gallery[currentIndex];
+        // Remove keyboard listener
+        document.removeEventListener("keydown", handleKeyDown);
     }
-  };
 
-  // Close Lightbox
-  window.closeLightbox = function (event) {
-    const lightbox = event.currentTarget; // The .lightbox element itself
-    if (event.target === lightbox) {
-      lightbox.classList.add("hidden");
+    // Change Image
+    function changeImage(step) {
+        currentIndex += step;
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        const lightboxImage = document.getElementById("lightbox-image");
+        lightboxImage.src = images[currentIndex];
     }
-  };
-});
 
+    // Handle keyboard input
+    function handleKeyDown(e) {
+        switch (e.key) {
+            case "Escape":
+                closeLightbox();       // ESC closes lightbox
+                break;
+            case "ArrowLeft":
+                changeImage(-1);       // Left arrow previous
+                break;
+            case "ArrowRight":
+                changeImage(1);        // Right arrow next
+                break;
+        }
+    }
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -146,29 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   slideElements.forEach(el => observer.observe(el));
 });
-
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    // Get the query string from the URL
-    const queryString = window.location.search;
-
-    // Parse the query string into an object
-    const urlParams = new URLSearchParams(queryString);
-
-    // Extract the 'name' parameter
-    const guestName = urlParams.get('name');
-
-    // Find the placeholder element in the HTML
-    const namePlaceholder = document.getElementById('guestName');
-
-    // Replace the placeholder with the guest's name
-    if (guestName && guestName.trim() !== "") {
-      namePlaceholder.textContent = decodeURIComponent(guestName); // Decode URL-encoded characters
-    } else {
-      namePlaceholder.textContent = "Guest"; // Default if no name is provided
-    }
-  });
-  
 
   document.addEventListener("DOMContentLoaded", function () {
     let lastScrollTop = 0;
