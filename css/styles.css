@@ -6,9 +6,24 @@ body {
   font-family: "Kantumruy Pro", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
-  max-width: 420px;
-  /* lock site to mobile width */
+  max-width: 430px;
   margin: 0 auto;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .h-screen-l {
