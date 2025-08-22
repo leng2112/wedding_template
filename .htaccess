@@ -1,0 +1,12 @@
+# Allow Facebook / Messenger crawlers to fetch OG images
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Detect Facebook/Messenger crawlers
+RewriteCond %{HTTP_USER_AGENT} "facebookexternalhit/[0-9]" [OR]
+RewriteCond %{HTTP_USER_AGENT} "facebookcatalog/[0-9]" [OR]
+RewriteCond %{HTTP_USER_AGENT} "Facebot"
+
+# Always allow them access
+RewriteRule ^ - [L]
+</IfModule>
