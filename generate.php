@@ -1,6 +1,6 @@
 <?php
 // guest list
-$guests = ["Siengly", "Meng"];
+$guests = ["Siengly",];
 
 foreach ($guests as $guest) {
     // clean guest name for file name
@@ -15,7 +15,7 @@ foreach ($guests as $guest) {
   <title>សូមគោរពអញ្ជើញ,$guest</title>
   <meta property="og:title" content="សិរីមង្គលអាពាណ៍ពិពាហ៍, សូមគោរពអញ្ជើញ : $guest, ">
   <meta property="og:description" content="Save the date & celebrate with us!">
-  <meta property="og:image" content="https://leabnhawedding.com/images/og-image_wedding_preview.webp">
+  <meta property="og:image" content="https://leabnhawedding.com/../images/og-image_wedding_preview.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:type" content="website">
@@ -24,14 +24,14 @@ foreach ($guests as $guest) {
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leabnhawedding.com/">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="preload" as="image" href="/images/logo-v1.webp" type="image/webp">
+    <link rel="preload" as="image" href="../images/logo-v1.webp" type="image/webp">
 
 </head>
 
@@ -41,7 +41,7 @@ foreach ($guests as $guest) {
         <source src="wedding_background_instrument.mp3" />
     </audio>
     <!-- Background Image ---->
-    <img src="images/bg2.webp" alt="background"
+    <img src="../images/bg2.webp" alt="background"
         class="position-fixed top-0 start-0 w-100 h-100 object-fit-cover  d-lg-block"
         style="z-index: -100; background-size: cover;">
 
@@ -49,12 +49,12 @@ foreach ($guests as $guest) {
     <header id="first-page">
         <div id="start-button" class="d-flex justify-content-center align-items-end w-100 position-relative"
             style="height: 100vh; z-index: 10;">
-            <img src="images/bg_page1.webp" alt="background" class="position-fixed top-0 start-50 translate-middle-x"
+            <img src="../images/bg_page1.webp" alt="background" class="position-fixed top-0 start-50 translate-middle-x"
                 style="height:100vh; object-fit:cover; z-index:-100;">
             <!-- Logo -->
             <div>
                 <div class="position-absolute bottom-0 start-50 translate-middle-x w-100" style="margin-bottom: 8rem;">
-                    <img alt="logo" src="images/logo-v1.webp" class="img-fluid">
+                    <img alt="logo" src="../images/logo-v1.webp" class="img-fluid">
                 </div>
                 <svg class="hand" viewBox="0 0 256 256">
                     <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
@@ -78,7 +78,7 @@ foreach ($guests as $guest) {
         style="display: none; opacity: 0; background: rgba(0,0,0,0.8); top:0; left:0; ">
         <video id="popup-video" playsinline webkit-playsinline muted preload="auto"
             style="max-width:100%; max-height:100%;">
-            <source src="images/open_clip.mp4" type="video/mp4">
+            <source src="../images/open_clip.mp4" type="video/mp4">
         </video>
     </div>
 
@@ -104,7 +104,7 @@ foreach ($guests as $guest) {
                         <!-- Logo -->
                         <div class="z-3 mt-3">
                             <img alt="logo" loading="lazy" width="204" height="278" decoding="async"
-                                src="images/logo.svg" class="img-fluid">
+                                src="../images/logo.svg" class="img-fluid">
                         </div>
                         <!-- Groom & Bride Names -->
                         <div class="d-flex justify-content-between align-items-center w-100 px-3 py-3 fw-semibold"
@@ -148,20 +148,20 @@ foreach ($guests as $guest) {
                         </div>
                     </div>
             </section>
-            <section id="gallery1st" class="images">
+            <section id="gallery1st" class="../images">
                 <div class="gallery">
                     <div class="rows">
-                        <img src="images/images1.webp" alt="Gallery Image 1" class="large-image"
+                        <img src="../images/images1.webp" alt="Gallery Image 1" class="large-image"
                             onclick="openLightbox(0)" loading="lazy">
                     </div>
                     <div class="rows">
-                        <img src="images/images2.webp" alt="Gallery Image 2" class="small-image"
+                        <img src="../images/images2.webp" alt="Gallery Image 2" class="small-image"
                             onclick="openLightbox(1)">
-                        <img src="images/images3.webp" alt="Gallery Image 3" class="small-image"
+                        <img src="../images/images3.webp" alt="Gallery Image 3" class="small-image"
                             onclick="openLightbox(2)" loading="lazy">
                     </div>
                     <div class="rows">
-                        <img src="images/images4.webp" alt="Gallery Image 4" class="large-image"
+                        <img src="../images/images4.webp" alt="Gallery Image 4" class="large-image"
                             onclick="openLightbox(3)" loading="lazy">
                     </div>
                 </div>
@@ -196,7 +196,7 @@ foreach ($guests as $guest) {
                         <div class="position-relative fw-semibold mt-4 pop-up-on-scroll">
                             <!-- Logo -->
                             <div class="text-center">
-                                <img src="images/logo_v2.svg" class="img-fluid mx-auto" style="max-width: 10rem;"
+                                <img src="../images/logo_v2.svg" class="img-fluid mx-auto" style="max-width: 10rem;"
                                     loading="lazy" alt="Wedding Logo">
                             </div>
                             <!-- Groom & Bride Names -->
@@ -352,20 +352,20 @@ foreach ($guests as $guest) {
                     </div>
                 </div>
             </section>
-            <section id="gallery2nd" class="images position-relative">
+            <section id="gallery2nd" class="../images position-relative">
                 <div class="gallery">
                     <div class="rows">
-                        <img src="images/images5.webp" alt="Gallery Image 1" class="large-image"
+                        <img src="../images/images5.webp" alt="Gallery Image 1" class="large-image"
                             onclick="openLightbox(4)" loading="lazy">
                     </div>
                     <div class="rows">
-                        <img src="images/images6.webp" alt="Gallery Image 2" class="small-image"
+                        <img src="../images/images6.webp" alt="Gallery Image 2" class="small-image"
                             onclick="openLightbox(5)" loading="lazy">
-                        <img src="images/images7.webp" alt="Gallery Image 3" class="small-image"
+                        <img src="../images/images7.webp" alt="Gallery Image 3" class="small-image"
                             onclick="openLightbox(6)" loading="lazy">
                     </div>
                     <div class="rows">
-                        <img src="images/images8.webp" alt="Gallery Image 4" class="large-image"
+                        <img src="../images/images8.webp" alt="Gallery Image 4" class="large-image"
                             onclick="openLightbox(7)" loading="lazy">
                     </div>
                 </div>
@@ -386,7 +386,7 @@ foreach ($guests as $guest) {
                         </div>
                         <!-- Map Image -->
                         <div class="mt-3 w-100 text-center slide-in-left">
-                            <img loading="lazy" src="images/map.svg" alt="Map" class="img-fluid"
+                            <img loading="lazy" src="../images/map.svg" alt="Map" class="img-fluid"
                                 style="max-width: 330px;; object-fit: contain;">
                         </div>
                         <!-- Map button -->
@@ -416,20 +416,20 @@ foreach ($guests as $guest) {
                     </div>
                 </div>
             </section>
-            <section id="gallery3rd" class="images position-relative">
+            <section id="gallery3rd" class="../images position-relative">
                 <div class="gallery">
                     <div class="rows">
-                        <img src="images/images9.webp" alt="Gallery Image 1" class="large-image"
+                        <img src="../images/images9.webp" alt="Gallery Image 1" class="large-image"
                             onclick="openLightbox(8)" loading="lazy">
                     </div>
                     <div class="rows">
-                        <img src="images/images10.webp" alt="Gallery Image 2" class="small-image"
+                        <img src="../images/images10.webp" alt="Gallery Image 2" class="small-image"
                             onclick="openLightbox(9)" loading="lazy">
-                        <img src="images/images11.webp" alt="Gallery Image 3" class="small-image"
+                        <img src="../images/images11.webp" alt="Gallery Image 3" class="small-image"
                             onclick="openLightbox(10)" loading="lazy">
                     </div>
                     <div class="rows">
-                        <img src="images/images12.webp" alt="Gallery Image 4" class="large-image"
+                        <img src="../images/images12.webp" alt="Gallery Image 4" class="large-image"
                             onclick="openLightbox(11)" loading="lazy">
                     </div>
                 </div>
@@ -462,7 +462,7 @@ foreach ($guests as $guest) {
                     <div
                         class="d-flex flex-column justify-content-center align-items-center mt-5 vh-100 text-center text-warning fw-light">
                         <!-- Logo -->
-                        <img src=" images/invitely_logo-01.svg" width="200" height="200" alt="invitely logo"
+                        <img src=" ../images/invitely_logo-01.svg" width="200" height="200" alt="invitely logo"
                             class="img-fluid mb-4" loading="lazy" decoding="async">
                         <!-- Text -->
                         <p class="px-3 px-md-5" style="color: #333366;">
@@ -522,7 +522,7 @@ foreach ($guests as $guest) {
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 
