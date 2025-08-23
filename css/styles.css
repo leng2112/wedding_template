@@ -469,3 +469,7 @@ text {
 .small-image:hover {
   transform: scale(1.05)
 }
+
+.tooltip.show {
+  opacity: 0;
+}
