@@ -12,6 +12,7 @@ foreach ($guests as $guest) {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>សូមគោរពអញ្ជើញ,$guest</title>
   <meta property="og:title" content="សិរីមង្គលអាពាណ៍ពិពាហ៍, សូមគោរពអញ្ជើញ : $guest, ">
   <meta property="og:description" content="Save the date & celebrate with us!">
