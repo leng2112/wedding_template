@@ -2,6 +2,14 @@ html {
   scroll-behavior: smooth
 }
 
+.kantumruy-pro- {
+  font-family: "Kantumruy Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300, 400, 500, 600, 700;
+  font-style: normal;
+}
+
+
 body {
   font-family: "Kantumruy Pro", sans-serif !important;
   font-optical-sizing: auto;
