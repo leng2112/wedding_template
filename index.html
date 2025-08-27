@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join us as we celebrate our wedding. Find details, RSVP, and share the joy of our special day with family and friends.">
     <title>leabnhawedding</title>
     <meta property="og:title"
         content="សូមគោរពអញ្ចើញ ភ្ញៀវកិត្តិយស ចូលរួមជាភ្ញៀវចូលរួមជាអធិបតីភាព កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ 💍">
@@ -16,13 +18,27 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://leabnhawedding.com/">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Preload Bootstrap CSS -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </noscript>
+
+    <!-- Preload Your Custom Styles -->
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/styles.css">
+    </noscript>
+
+    <!-- Preconnect to reduce latency -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+
+    <!-- Preload & load font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" fetchpriority="high">
+
+
     <link rel="preload" as="image" href="/images/logo-v1.webp" type="image/webp">
 
 </head>
@@ -46,7 +62,8 @@
             <!-- Logo -->
             <div>
                 <div class="position-absolute bottom-0 start-50 translate-middle-x w-100" style="margin-bottom: 8rem;">
-                    <img alt="logo" src="images/logo-v1.webp" class="img-fluid">
+                    <img alt="logo" src="images/logo-v1.webp" fetchpriority="high" decoding="async" class="img-fluid"
+                        width="430" height="174">
                 </div>
                 <svg class="hand" viewBox="0 0 256 256">
                     <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
@@ -91,11 +108,10 @@
                     <div class="d-flex flex-column min-h-screen-s justify-content-center align-items-center text-2xl"
                         style="opacity: 1;">
                         <!-- Title -->
-                        <p class="fw-semibold fs-4 mb-5">សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
+                        <h1 class="fw-semibold fs-2 mb-5">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
                         <!-- Logo -->
                         <div class="z-3 mt-3">
-                            <img alt="logo" loading="lazy" width="204" height="278" decoding="async"
-                                src="images/logo.svg" class="img-fluid">
+                            <img alt="logo" width="432" decoding="async" src="images/logo-v2.webp" class="img-fluid">
                         </div>
                         <!-- Groom & Bride Names -->
                         <div class="d-flex justify-content-between align-items-center w-100 px-3 py-3 fw-semibold"
@@ -113,7 +129,6 @@
                                 <div class="d-flex flex-column-reverse">
                                     <p class="mb-0 text-nowrap">ប៊ុនថុន &ZeroWidthSpace; កញ្ញា
                                     </p>
-                                    <p class="mb-0"></p>
                                 </div>
                             </div>
                         </div>
@@ -123,10 +138,10 @@
                                 ដែលនឹងប្រព្រឹត្តទៅនៅ
                             </p>
                             <div class="fw-semibold">
-                                <div class="text-center text-2xl text-uppercase" style="font-size: 1.3rem;">
+                                <p class="text-center text-2xl text-uppercase" style="font-size: 1.3rem;">
                                     ថ្ងៃសុក្រ ទី០៤&ZeroWidthSpace; ខែមេសា <br>
                                     <span class="text-uppercase fs-2">ឆ្នាំ២០២៥</span>
-                                </div>
+                                </p>
                             </div>
                         </div>
                         <div class="position-absolute w-100  fw-bold d-flex justify-content-center arrow-icon"
@@ -147,7 +162,7 @@
                     </div>
                     <div class="rows">
                         <img src="images/images2.webp" alt="Gallery Image 2" class="small-image"
-                            onclick="openLightbox(1)">
+                            onclick="openLightbox(1)" loading="lazy">
                         <img src="images/images3.webp" alt="Gallery Image 3" class="small-image"
                             onclick="openLightbox(2)" loading="lazy">
                     </div>
@@ -163,31 +178,31 @@
                         <!-- Parents -->
                         <div class="d-flex justify-content-between fw-semibold mx-auto mt-4 mb-4 pop-up-on-scroll"
                             style="max-width: 640px; gap: 0.5rem;">
-                            <div class=" text-start small">
+                            <p class=" text-start small">
                                 លោក សៅ សាក់<br>
                                 លោកស្រី សន ចិន្ដា
-                            </div>
-                            <div class=" text-end small">
+                            </p>
+                            <p class=" text-end small">
                                 លោក សុខ ប៊ុនថុន<br>
                                 លោកស្រី សារិន សោភា
-                            </div>
+                            </p>
                         </div>
                         <!-- Title -->
-                        <div class="text-center fw-semibold mb-4 pop-up-on-scroll" style="font-size: 1.5rem;">
+                        <h2 class="text-center fw-semibold mb-4 pop-up-on-scroll" style="font-size: 1.5rem;">
                             មានកិត្តិយសសូមគោរពអញ្ជើញ
-                        </div>
+                        </h2>
                         <!-- Invitation Message -->
-                        <div class="text-center mx-auto mt-4 small pop-up-on-scroll" style="max-width: 640px;">
+                        <p class="text-center mx-auto mt-4 small pop-up-on-scroll" style="max-width: 640px;">
                             សូមគោរពអញ្ចើញ ឯកឧត្តម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា
                             ចូលរួមជាភ្ញៀវចូលរួមជាអធិបតីភាព
                             និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យសិរិសួស្តីជ័យមង្គល
                             ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍កូនប្រុសកូនស្រីរបស់យើងខ្ញុំ
-                        </div>
+                        </p>
                         <!-- Logo and Names -->
                         <div class="position-relative fw-semibold mt-4 pop-up-on-scroll">
                             <!-- Logo -->
                             <div class="text-center">
-                                <img src="images/logo_v2.svg" class="img-fluid mx-auto" style="max-width: 10rem;"
+                                <img src="images/logo_v3.webp" class="img-fluid mx-auto" style="max-width: 10rem;"
                                     loading="lazy" alt="Wedding Logo">
                             </div>
                             <!-- Groom & Bride Names -->
@@ -212,15 +227,15 @@
                             </div>
                         </div>
                         <!-- Ceremony Time -->
-                        <div class="text-center small mt-4 pop-up-on-scroll">
+                        <p class="text-center small mt-4 pop-up-on-scroll">
                             ដែលនឹងប្រព្រឹត្តទៅ ចាប់ពីម៉ោង ១៧:០០
-                        </div>
+                        </p>
                         <!-- Ceremony Date -->
-                        <div class="fw-semibold text-center mt-3 text-uppercase pop-up-on-scroll"
+                        <p class="fw-semibold text-center mt-3 text-uppercase pop-up-on-scroll"
                             style="font-size: 1.5rem;">
                             ថ្ងៃសុក្រ ទី០៤ ខែមេសា<br>
                             <span style="font-size: 2rem;">ឆ្នាំ២០២៥</span>
-                        </div>
+                        </p>
                         <!-- Calendar Button -->
                         <div class="d-flex justify-content-center mt-3 pop-up-on-scroll">
                             <button
@@ -253,95 +268,99 @@
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="px-4 mt-5">
                         <!-- Section Title -->
-                        <div class="position-relative text-center fw-semibold py-4">
+                        <h3 class="fs-4 position-relative text-center fw-semibold py-4">
                             កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍
-                        </div>
+                        </h3>
                         <div class="px-4 text-center fw-medium fs-7">
                             <div class="timeline">
                                 <!-- Event 1 -->
                                 <div class="row timeline-item p-0 ">
                                     <div class="col-5 text-end event p-0 slide-in-left">
-                                        <div class="">
+                                        <p class="m-0">
                                             ពិធីហែជំនូន
-                                        </div>
-                                        <div style="font-size: 0.7rem ;">
+                                        </p>
+                                        <p style="font-size: 0.7rem ;">
                                             ទទួលផ្លាស្លា ចូលរោងជ័យ
                                             អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក
-                                        </div>
+                                        </p>
                                     </div>
                                     <div class="col-2"></div>
-                                    <div class="col-5  text-start time p-0 slide-in-right">៧:០០ នាទីព្រឹក</div>
+                                    <p class="col-5  text-start time p-0 slide-in-right">៧:០០ នាទីព្រឹក</p>
                                 </div>
                                 <!-- Event 2 -->
                                 <div class="row timeline-item ">
-                                    <div class="col-5  text-end event p-0 slide-in-left">៨:០០ នាទីព្រឹក</div>
+                                    <p class="col-5  text-end event p-0 slide-in-left">៨:០០ នាទីព្រឹក</p>
                                     <div class="col-2"></div>
-                                    <div class="col-5  text-start time p-0 slide-in-right">ពិធីបំពាក់ចិញ្ជៀន</div>
+                                    <p class="col-5  text-start time p-0 slide-in-right">ពិធីបំពាក់ចិញ្ជៀន</p>
                                 </div>
                                 <!-- Event 3 -->
                                 <div class="row timeline-item ">
                                     <div class="col-5  text-end event p-0 slide-in-left">
-                                        <div class="">
+                                        <p class="m-0">
                                             ពិធីសូត្រមន្ត
-                                        </div>
-                                        <div style="font-size: 0.7rem ;">
+                                        </p>
+                                        <p style="font-size: 0.7rem ;">
                                             ចម្រើនព្រះបរិត្ត
-                                        </div>
+                                        </p>
                                     </div>
                                     <div class="col-2"></div>
-                                    <div class="col-5 text-start time p-0 slide-in-right">៩:០០ នាទីព្រឹក</div>
+                                    <div class="col-5 text-start time p-0 slide-in-right">
+                                        <p>៩:០០ នាទីព្រឹក</p>
+                                    </div>
+
                                 </div>
                                 <!-- Event 4 -->
                                 <div class="row timeline-item ">
-                                    <div class="col-5 text-end event p-0 slide-in-left">១០:០០ នាទីព្រឹក</div>
+                                    <p class="col-5 text-end event p-0 slide-in-left">១០:០០ នាទីព្រឹក</p>
                                     <div class="col-2"></div>
-                                    <div class="col-5  text-start time p-0 slide-in-right">
-                                        ពិធីកាត់សក់បង្កក់សិរី</div>
+                                    <p class="col-5  text-start time p-0 slide-in-right">
+                                        ពិធីកាត់សក់បង្កក់សិរី</p>
                                 </div>
                                 <!-- Event 5 -->
                                 <div class="row timeline-item ">
-                                    <div class="col-5 text-end event p-0 slide-in-left">១១:០០ នាទីព្រឹក</div>
+                                    <p class="col-5 text-end event p-0 slide-in-left">១១:០០ នាទីព្រឹក</p>
                                     <div class="col-2"></div>
                                     <div class="col-5 text-start time p-0 slide-in-right">
-                                        <div class="">
-                                            ពិធីហែជំនូន
-                                        </div>
-                                        <div style="font-size: 0.7rem ;">
-                                            ទទួលផ្លាស្លា ចូលរោងជ័យ
-                                            អញ្ជើញភ្ញៀវកិត្តិយសពិសារអាហារពេលព្រឹក
-                                        </div>
+                                        <p class="m-0">
+                                            ពិធីសំពះផ្ទឹម
+                                        </p>
+                                        <p style="font-size: 0.7rem ;">
+                                            បង្វិលពពិល គួចចំណងដៃ
+                                            បាចផ្កាស្លា ព្រះថោងនាងនាគ
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- Event 6 -->
-                                <div class="row timeline-item ">
-                                    <div class="col-5 text-end event p-0 slide-in-left">១១:៣០ នាទីព្រឹក</div>
+                                <div class="row imeline-item ">
+                                    <p class="col-5 text-end event p-0 slide-in-left">១១:៣០ នាទីព្រឹក</p>
                                     <div class="col-2"></div>
                                     <div class="col-5 text-start time p-0 slide-in-right">
-                                        <div class="">
+                                        <p class="m-0">
                                             អញ្ជើញ
-                                        </div>
-                                        <div style="font-size: 0.7rem ;">
+                                        </p>
+                                        <p style="font-size: 0.7rem ;">
                                             ភ្ញៀវកិត្តិយសពិសារអាហារថ្ងៃត្រង់
-                                        </div>
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- Event 7 -->
                                 <div class="row timeline-item ">
                                     <div class="col-5  text-end event p-0 slide-in-left">
-                                        <div class="">
+                                        <p class="m-0">
                                             ពិធីបដិសញ្ឋារកិច្ច
-                                        </div>
-                                        <div style="font-size: 0.7rem ;">
+                                        </p>
+                                        <p style="font-size: 0.7rem ;">
                                             ភ្ញៀវកិត្តិយសពិសារភោជនារអាហារ
-                                        </div>
+                                        </p>
                                     </div>
                                     <div class="col-2"></div>
-                                    <div class="col-5 text-start time p-0 slide-in-right">១៧:០០ នាទីល្ងាច</div>
+                                    <p class="col-5 text-start time p-0 slide-in-right">១៧:០០ នាទីល្ងាច</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
             </section>
             <section id="gallery2nd" class="images position-relative">
                 <div class="gallery">
@@ -367,14 +386,14 @@
                     <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
 
                         <!-- Title -->
-                        <div class="text-center fw-semibold slide-in-left">
+                        <h4 class="fs-4 m-0 text-center fw-semibold slide-in-left">
                             ទីតាំង
-                        </div>
+                        </h4>
 
                         <!-- Subtitle -->
-                        <div class="text-center p-3 slide-in-left">
+                        <p class="text-center  slide-in-left">
                             ភូមិព្រែកស្វាយ ឃុំឈើទាល ស្រុកកៀនស្វាយ ខេត្តកណ្ដាល
-                        </div>
+                        </p>
                         <!-- Map Image -->
                         <div class="mt-3 w-100 text-center slide-in-left">
                             <img loading="lazy" src="images/map.svg" alt="Map" class="img-fluid"
@@ -428,12 +447,12 @@
             <section id="wish" class="position-relative">
                 <div class="d-flex flex-column w-100 h-100">
                     <div class="d-flex flex-column justify-content-center align-items-center min-vh-100  ">
-                        <div class="text-center fw-semibold  font-size: 1.5rem;">
+                        <h4 class="fs-4 m-0 text-center fw-semibold slide-in-left">
                             ពាក្យជូនពរ
-                        </div>
-                        <div class="text-center p-3 font-size: 1.25rem;">
+                        </h4>
+                        <p class="text-center">
                             សូមផ្ញើជូននូវពរជ័យ និងពាក្យពេចន៍ល្អៗរបស់អ្នកសម្រាប់គូស្វាមីភរិយាថ្មីថ្មោង
-                        </div>
+                        </p>
                         <div class="mt-3 w-100 d-flex justify-content-center text-center">
                             <form class="d-flex flex-column" action="https://formspree.io/f/xvgqkkev" method="POST"
                                 style="width: 250px; height: 120px;">
@@ -451,7 +470,7 @@
             <section id="aboutus" class="position-relative">
                 <div class="d-flex flex-column w-100 h-100">
                     <div
-                        class="d-flex flex-column justify-content-center align-items-center mt-5 vh-100 text-center text-warning fw-light">
+                        class="d-flex flex-column justify-content-center align-items-center mt-5 vh-100 text-center text-warning">
                         <!-- Logo -->
                         <img src=" images/invitely_logo-01.svg" width="200" height="200" alt="invitely logo"
                             class="img-fluid mb-4" loading="lazy" decoding="async">
