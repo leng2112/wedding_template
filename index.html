@@ -39,7 +39,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" fetchpriority="high">
 
 
-    <link rel="preload" as="image" href="/images/logo-v1.webp" type="image/webp">
 
 </head>
 
@@ -56,9 +55,16 @@
         <div id="start-button" class="d-flex justify-content-center align-items-end w-100 position-relative"
             style="height: 100vh; z-index: 10;">
             <div class="bg-image"></div>
-            <div class="position-absolute bottom-0 start-50 translate-middle-x w-100" style="margin-bottom: 8rem;">
-                <img alt="logo" src="images/logo-v1.webp" fetchpriority="high" decoding="async" class="img-fluid"
-                    width="430" height="174">
+            <div class="hero-logo">
+                <picture>
+                    <source srcset="images/logo-v1-216.svg 216w, 
+                images/logo-v1-320.svg 320w, 
+                images/logo-v1-432.svg 432w" sizes="(max-width: 576px) 216px, (max-width: 992px) 320px, 432px"
+                        type="image/svg+xml">
+
+                    <img src="images/logo-v1-432.svg" alt="logo" width="432" height="174" class="img-fluid">
+                </picture>
+
             </div>
             <svg class="hand" viewBox="0 0 256 256">
                 <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"

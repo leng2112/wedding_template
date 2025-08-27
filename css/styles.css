@@ -62,6 +62,21 @@ video {
   /* stays behind your content */
 }
 
+.hero-logo {
+  position: absolute;
+  bottom: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.hero-logo img {
+  max-width: 430px;
+  width: 100%;
+  height: auto;
+}
+
 .resizable-box {
   width: 80%;
   height: 50px;
