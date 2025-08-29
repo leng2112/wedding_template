@@ -82,9 +82,8 @@ body {
 
 .full-width-img {
   width: 1200px;
-  /* Or whatever width you want */
   max-width: none;
-  /* This is the key to override `img-fluid` */
+
 }
 
 .resizable-box {
@@ -521,4 +520,16 @@ text {
 
 .tooltip.show {
   opacity: 0;
+}
+
+#start-button {
+  width: 430px;
+  height: 932px;
+  /* reserve button space */
+}
+
+#audioToggle {
+  width: 40px;
+  height: 40px;
+  /* reserve toggle space */
 }
