@@ -29,6 +29,8 @@
     <noscript>
         <link rel="stylesheet" href="css/styles.css">
     </noscript>
+    <link rel="preload" as="image" href="images/logo-v2-430.webp" type="image/webp">
+
 
 </head>
 
@@ -38,7 +40,7 @@
         <source src="wedding_background_instrument.mp3" />
     </audio>
     <!-- Background Image ---->
-    <div class="bg-image2"></div>
+    <div class="bg-image" width="1620" height="1080"></div>
 
     <!-- First Page -->
     <header id="first-page">
@@ -111,7 +113,8 @@
                             <picture>
                                 <source media="(max-width: 430px)" srcset="/images/logo-v2-216.webp">
                                 <source media="(max-width: 576px)" srcset="/images/logo-v2-370.webp">
-                                <img src="/images/logo-v2-430.webp" alt="Responsive Logo" class="img-fluid">
+                                <img src="/images/logo-v2-430.webp" alt="Responsive Logo" loading="eager"
+                                    decoding="async" class="img-fluid">
                             </picture>
                         </div>
                         <!-- Groom & Bride Names -->

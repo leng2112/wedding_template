@@ -80,12 +80,6 @@ body {
   height: auto;
 }
 
-.full-width-img {
-  width: 1200px;
-  max-width: none;
-
-}
-
 .resizable-box {
   width: 80%;
   height: 50px;
