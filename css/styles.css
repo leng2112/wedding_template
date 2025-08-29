@@ -49,7 +49,7 @@ body {
   max-width: 1200px;
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("../images/bg_page1.webp") center/cover no-repeat;
   z-index: -1;
   /* stays behind your content */
