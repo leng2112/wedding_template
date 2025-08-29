@@ -528,10 +528,3 @@ text {
   height: 48px;
   flex-shrink: 0;
 }
-
-
-#audioToggle svg,
-#audioToggle i {
-  width: 24px;
-  height: 24px;
-}
