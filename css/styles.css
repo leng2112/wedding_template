@@ -341,8 +341,6 @@ text {
 .hand {
   width: 40px;
   position: absolute;
-  bottom: 5px;
-  left: 4%;
   transform: translateX(50%) translateY(0);
   cursor: pointer;
   animation: handPress 1.5s infinite cubic-bezier(.65, 0, .35, 1);
