@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
   scroll-behavior: smooth
 }
@@ -10,11 +12,12 @@ html {
 }
 
 
+
 body {
   font-family: "Kantumruy Pro", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
-  max-width: 430px;
+  max-width: 1200px;
   margin: 0 auto
 }
 
@@ -22,13 +25,7 @@ html,
 body {
   overflow-x: hidden;
   position: relative;
-  height: 100%
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto
+  height: 100vh
 }
 
 .container {
@@ -49,9 +46,8 @@ video {
 }
 
 .bg-image {
+  max-width: 1200px;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: url("../images/bg_page1.webp") center/cover no-repeat;
@@ -60,9 +56,8 @@ video {
 }
 
 .bg-image2 {
+  max-width: 1200px;
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: url("../images/bg2.webp") center/cover no-repeat;
@@ -80,9 +75,16 @@ video {
 }
 
 .hero-logo img {
-  max-width: 430px;
+  max-width: 1200px;
   width: 100%;
   height: auto;
+}
+
+.full-width-img {
+  width: 1200px;
+  /* Or whatever width you want */
+  max-width: none;
+  /* This is the key to override `img-fluid` */
 }
 
 .resizable-box {
@@ -99,6 +101,14 @@ video {
   line-height: 1.2;
   margin: 0;
   color: #a57c52
+}
+
+#popup-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 #popup-page,
@@ -331,11 +341,11 @@ text {
 .hand {
   width: 40px;
   position: absolute;
-  top: 78%;
-  left: 14%;
-  transform: translate(80px, -10px);
+  bottom: 5px;
+  left: 4%;
+  transform: translateX(50%) translateY(0);
   cursor: pointer;
-  animation: handPress 1.5s infinite cubic-bezier(.65, 0, .35, 1)
+  animation: handPress 1.5s infinite cubic-bezier(.65, 0, .35, 1);
 }
 
 @keyframes handPress {
