@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'Kantumruy Pro';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/kantumruypro.woff2') format('woff2');
+}
+
 
 html {
   scroll-behavior: smooth
 }
-
-.kantumruy-pro- {
-  font-family: "Kantumruy Pro", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300, 400, 500, 600, 700;
-  font-style: normal;
-}
-
-
 
 body {
   font-family: "Kantumruy Pro", sans-serif !important;
@@ -58,7 +56,7 @@ body {
 .bg-image2 {
   position: fixed;
   width: 100%;
-  /* responsive */
+  height: 100vh;
   aspect-ratio: 1200 / 938;
   background: url("../images/bg2.webp") center/cover no-repeat;
   z-index: -1;
