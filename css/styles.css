@@ -109,6 +109,7 @@ body {
 }
 
 .bg-image {
+  max-width: 1200px;
   width: 100%;
   /* responsive */
   aspect-ratio: 1200 / 938;
