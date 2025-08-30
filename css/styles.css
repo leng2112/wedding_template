@@ -1,18 +1,83 @@
 @font-face {
-  font-family: 'Kantumruy Pro';
+  font-family: 'KantumruyPro';
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url('./font/kantumruypro.woff2') format('woff2');
+  src: url('./font/KantumruyPro-VariableFont_wght.woff2') format('woff2');
+}
+
+/* ExtraLight (200) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-ExtraLight.woff2') format('woff2');
+}
+
+/* Light (300) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-Light.woff2') format('woff2');
+}
+
+/* Regular (400) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-Regular.woff2') format('woff2');
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-Medium.woff2') format('woff2');
+}
+
+/* SemiBold (600) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-SemiBold.woff2') format('woff2');
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-Bold.woff2') format('woff2');
+}
+
+/* Variable Font (A range of weights) */
+@font-face {
+  font-family: 'KantumruyPro';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('./font/KantumruyPro-VariableFont_wght.woff2') format('woff2');
 }
 
 body {
-  font-family: "Kantumruy Pro", sans-serif !important;
+  font-family: 'KantumruyPro', Arial sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
 
 
 html {
