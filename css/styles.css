@@ -6,17 +6,17 @@
   src: url('./font/kantumruypro.woff2') format('woff2');
 }
 
-
-html {
-  scroll-behavior: smooth
-}
-
 body {
   font-family: "Kantumruy Pro", sans-serif !important;
   font-optical-sizing: auto;
   font-style: normal;
   max-width: 1200px;
-  margin: 0 auto
+  margin: 0 auto;
+}
+
+
+html {
+  scroll-behavior: smooth
 }
 
 html,
