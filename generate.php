@@ -1,6 +1,6 @@
 <?php
 // guest list
-$guests = ["នាយព្រែក និង ភរិយា",];
+$guests = ["Ms. Lach Siengly","នាយព្រែក និង ភរិយា"];
 
 foreach ($guests as $guest) {
     // clean guest name for file name
@@ -18,7 +18,7 @@ foreach ($guests as $guest) {
         content="Join us as we celebrate our wedding. Find details, RSVP, and share the joy of our special day with family and friends.">
     <title>leabnhawedding</title>
     <meta property="og:title"
-        content="សូមគោរពអញ្ចើញ ភ្ញៀវកិត្តិយស ចូលរួមជាភ្ញៀវចូលរួមជាអធិបតីភាព កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ 💍">
+        content="សូមគោរពអញ្ចើញ {$guest} ចូលរួមជាភ្ញៀវចូលរួមជាអធិបតីភាព កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ 💍">
     <meta property="og:description" content="សាក់ ប្រុសលាប និង ប៊ុនថុន កញ្ញា">
     <meta property="og:image" content="https://leabnhawedding.com/images/og-image_wedding_preview.webp">
     <meta property="og:image:width" content="1200">
