@@ -5,8 +5,9 @@ const popupVideo = document.getElementById('popup-video');
 const startButton = document.getElementById('start-button');
 
 // Function to show scrollable page after video
-function handleVideoEnd() {
+function handleImageEnd() {
   popupPage.style.opacity = '0';
+
   setTimeout(() => {
     popupPage.style.display = 'none';
     firstPage.style.display = 'none';
@@ -14,9 +15,11 @@ function handleVideoEnd() {
     // Show scrollable page
     scrollablePage.style.display = 'block';
     scrollablePage.style.transition = 'opacity 0.3s ease-in-out';
+
     setTimeout(() => {
       scrollablePage.style.opacity = '1';
     }, 50);
+
   }, 300);
 }
 
@@ -31,27 +34,11 @@ startButton.addEventListener('click', () => {
 
   setTimeout(() => {
     popupPage.style.opacity = '1';
-    popupVideo.currentTime = 0; // restart video
 
-    // Try to autoplay
-    popupVideo.play().then(() => {
-      // Fallback timer in case Safari never fires "ended"
-      const duration = popupVideo.duration;
-      if (!isNaN(duration)) {
-        setTimeout(() => {
-          if (popupVideo.ended) return;
-          handleVideoEnd();
-        }, duration * 1000 + 500);
-      }
-    }).catch(err => {
-      console.warn("Autoplay blocked or failed:", err);
-      handleVideoEnd(); // Skip video if autoplay fails
-    });
+    // ⏱ Show image for 2 seconds then continue
+    setTimeout(handleImageEnd, 2000);
+
   }, 50);
-
-  // Ensure both event methods are covered
-  popupVideo.onended = handleVideoEnd;
-  popupVideo.addEventListener('ended', handleVideoEnd);
 });
 
     // Image Array
