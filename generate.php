@@ -4,10 +4,15 @@ $guests = ["Auntie Lach Leakhena Husband & Son",];
 
 foreach ($guests as $guest) {
     // clean guest name for file name
-    $slug = strtolower(preg_replace('/\s+/', '-', $guest));
-    
+    $slug = strtolower($guest);
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
+    $slug = trim($slug, '-');    
+    // escape guest name for HTML / OG
+    $safeGuest = htmlspecialchars($guest, ENT_QUOTES, 'UTF-8');
+
     // HTML template
     $html = <<<HTML
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +30,7 @@ foreach ($guests as $guest) {
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Chheng & Mitta Wedding Invitation">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mongkul.com/">
+    <meta property="og:url" content="https://mongkul.com/invite/$slug.html">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="preload" href="../css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
