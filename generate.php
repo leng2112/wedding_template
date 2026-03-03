@@ -18,7 +18,7 @@ foreach ($guests as $guest) {
         content="Join us as we celebrate our wedding. Find details, RSVP, and share the joy of our special day with family and friends.">
     <title>Leangchheng&MitaWedding</title>
     <meta property="og:title"
-        content="សូមគោរពអញ្ចើញ ភ្ញៀវកិត្តិយស ចូលរួមជាភ្ញៀវចូលរួមជាអធិបតីភាព កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ 💍">
+        content="សូមគោរពអញ្ចើញ $guest ចូលរួមជាភ្ញៀវកិត្តិយស កម្មវិធីមង្គលអាពាហ៍ពិពាហ៍ គូស្វាមីភរិយា ម៉ៅ លាងឆេង និង សាត សុខមិត្តា 💍">
     <meta property="og:description" content="គូស្វាមីភរិយា ម៉ៅ លាងឆេង និង សាត សុខមិត្តា">
     <meta property="og:image" content="https://mongkul.com/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
