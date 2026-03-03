@@ -829,6 +829,11 @@ textarea.form-control {
     margin-bottom: 3rem !important
 }
 
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 .p-0 {
     padding: 0 !important
 }
