@@ -8,11 +8,11 @@ foreach ($guests as $guest) {
     $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
     $slug = trim($slug, '-');    
     // escape guest name for HTML / OG
-    $safeGuest = htmlspecialchars($guest, ENT_QUOTES, 'UTF-8');
+    $guest = htmlspecialchars($guest, ENT_QUOTES, 'UTF-8');
 
     // HTML template
     $html = <<<HTML
-    
+
 <!DOCTYPE html>
 <html lang="en">
 
