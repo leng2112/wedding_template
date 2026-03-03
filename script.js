@@ -51,10 +51,6 @@ startButton.addEventListener('click', () => {
         "images/images6.webp",
         "images/images7.webp",
         "images/images8.webp",
-        "images/images9.webp",
-        "images/images10.webp",
-        "images/images11.webp",
-        "images/images12.webp",
     ];
 
     let currentIndex = 0;
